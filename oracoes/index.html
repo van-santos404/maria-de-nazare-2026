@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tesouro de Orações – Maria de Nazaré 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--azul:#2D5F8A;--azul-escuro:#1a3d5c;--azul-claro:#4a7faa;--azul-suave:#e8f1f8;--bege:#f5ede0;--bege-escuro:#e8d8c4;--pergaminho:#faf6ef;--dourado:#c9a84c;--dourado-claro:#e6c97a;--branco:#fff;--texto:#2a2218;--texto-suave:#6b5e50;--sombra:rgba(0,0,0,0.10)}
+html{scroll-behavior:smooth}
+body{font-family:'Lato',sans-serif;background:var(--pergaminho);color:var(--texto);overflow-x:hidden}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bege)}::-webkit-scrollbar-thumb{background:var(--azul-claro);border-radius:3px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(26,61,92,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.3);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--dourado-claro);text-decoration:none;letter-spacing:0.04em}
+.nav-logo span{color:rgba(255,255,255,0.7);font-weight:300}
+.nav-count{font-size:.72rem;color:rgba(255,255,255,.45);letter-spacing:.1em}
+#hero{min-height:52vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--azul-escuro)}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(201,168,76,.12) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(74,127,170,.15) 0%,transparent 50%),linear-gradient(160deg,#0f2236 0%,#1a3d5c 40%,#2D5F8A 100%)}
+.stars{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.star{position:absolute;background:#fff;border-radius:50%;animation:twinkle var(--dur,3s) ease-in-out infinite var(--delay,0s)}
+@keyframes twinkle{0%,100%{opacity:var(--base-op,.4);transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
+.hero-ornament{position:absolute;bottom:-2px;left:0;right:0;height:80px;background:var(--pergaminho);clip-path:ellipse(55% 100% at 50% 100%)}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:760px;padding:100px 2rem 110px}
+.hero-badge{display:inline-block;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);color:var(--dourado-claro);font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.4rem 1.2rem;border-radius:20px;margin-bottom:1.5rem;animation:fadeUp .8s ease both}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.6rem);font-weight:700;color:#fff;line-height:1.2;margin-bottom:.8rem;animation:fadeUp .8s ease .2s both}
+.hero-title em{font-style:italic;color:var(--dourado-claro)}
+.hero-subtitle{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2vw,1.35rem);font-weight:300;font-style:italic;color:rgba(255,255,255,.72);margin-bottom:1.5rem;animation:fadeUp .8s ease .4s both}
+.hero-stats{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s ease .6s both}
+.hero-stat{text-align:center}
+.hero-stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--dourado-claro);line-height:1}
+.hero-stat-label{font-size:.65rem;color:rgba(255,255,255,.5);letter-spacing:.12em;text-transform:uppercase;margin-top:.2rem}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+#search-section{background:var(--pergaminho);padding:2.5rem 2rem 0}
+.search-wrap{max-width:640px;margin:0 auto;position:relative}
+.search-input{width:100%;padding:1rem 1rem 1rem 3rem;border-radius:50px;border:2px solid var(--bege-escuro);background:var(--branco);font-family:'Lato',sans-serif;font-size:1rem;color:var(--texto);outline:none;transition:border-color .2s,box-shadow .2s;box-shadow:0 4px 20px var(--sombra)}
+.search-input:focus{border-color:var(--azul);box-shadow:0 4px 24px rgba(45,95,138,.15)}
+.search-icon{position:absolute;left:1.1rem;top:50%;transform:translateY(-50%);color:var(--texto-suave);pointer-events:none}
+.search-clear{position:absolute;right:1.1rem;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--texto-suave);cursor:pointer;font-size:1.1rem;display:none;padding:.2rem}
+.search-count{text-align:center;margin-top:.75rem;font-size:.82rem;color:var(--texto-suave);min-height:1.4em}
+#nav-pills-section{background:var(--pergaminho);padding:1.5rem 2rem 2rem}
+.pills-scroll{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+.nav-pill{padding:.4rem 1rem;border-radius:30px;border:1.5px solid var(--bege-escuro);background:var(--branco);font-size:.75rem;font-weight:700;letter-spacing:.05em;color:var(--texto-suave);cursor:pointer;transition:all .2s;white-space:nowrap}
+.nav-pill:hover,.nav-pill.active{background:var(--azul-escuro);color:var(--dourado-claro);border-color:var(--azul-escuro)}
+#main{padding:1rem 2rem 5rem}
+.container{max-width:1100px;margin:0 auto}
+.oracao-section{margin-bottom:3.5rem}
+.oracao-section.hidden{display:none}
+.sec-header{display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem;padding-bottom:.8rem;border-bottom:2px solid var(--bege-escuro);position:relative}
+.sec-icon{font-size:1.6rem;flex-shrink:0}
+.sec-label{font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.sec-line{position:absolute;bottom:-2px;left:0;height:2px;width:60px}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1rem}
+.oracao-card{background:var(--branco);border-radius:12px;padding:1.2rem;display:flex;align-items:flex-start;gap:.9rem;cursor:pointer;border:1.5px solid var(--bege-escuro);box-shadow:0 2px 12px var(--sombra);transition:transform .22s,box-shadow .22s;position:relative;overflow:hidden}
+.oracao-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--sec-cor,var(--azul));opacity:0;transition:opacity .22s}
+.oracao-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.12)}
+.oracao-card:hover::before{opacity:1}
+.card-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.card-content{flex:1;min-width:0}
+.card-titulo{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--azul-escuro);line-height:1.2;margin-bottom:.18rem}
+.card-subtitulo{font-size:.68rem;color:var(--texto-suave);margin-bottom:.4rem;line-height:1.4}
+.card-preview{font-size:.78rem;color:var(--texto-suave);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-arrow{font-size:1rem;flex-shrink:0;align-self:center;transition:transform .2s;opacity:.5}
+.oracao-card:hover .card-arrow{transform:translateX(3px);opacity:1}
+.card-hidden{display:none!important}
+.no-results{text-align:center;padding:4rem 2rem;color:var(--texto-suave);display:none}
+.no-results.show{display:block}
+.nr-icon{font-size:2.5rem;margin-bottom:.8rem}
+.modal-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,20,35,0.88);align-items:center;justify-content:center;padding:1.5rem;backdrop-filter:blur(6px)}
+.modal-overlay.active{display:flex}
+.modal{background:var(--branco);border-radius:20px;max-width:580px;width:100%;max-height:88vh;display:flex;flex-direction:column;box-shadow:0 32px 80px rgba(0,0,0,.4);overflow:hidden;animation:modalIn .28s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.modal-top{padding:1.5rem 1.8rem 1.1rem;border-bottom:1px solid var(--bege-escuro);position:relative}
+.modal-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.28rem .75rem;border-radius:20px;margin-bottom:.75rem}
+.modal-titulo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--azul-escuro);line-height:1.2;margin-bottom:.25rem}
+.modal-subtitulo{font-size:.8rem;color:var(--texto-suave);line-height:1.5;font-style:italic}
+.modal-close{position:absolute;top:1.1rem;right:1.1rem;background:var(--bege);border:none;border-radius:50%;width:32px;height:32px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--texto-suave);transition:background .2s,color .2s}
+.modal-close:hover{background:var(--azul-escuro);color:var(--dourado-claro)}
+.modal-body{padding:1.6rem 1.8rem;overflow-y:auto;flex:1}
+.modal-texto{font-family:'Cormorant Garamond',serif;font-size:1.1rem;line-height:2;color:var(--texto);white-space:pre-line}
+.modal-footer{padding:1rem 1.5rem;border-top:1px solid var(--bege-escuro);display:flex;gap:.6rem;flex-wrap:wrap;background:var(--pergaminho)}
+.modal-btn{display:flex;align-items:center;gap:.4rem;padding:.55rem 1.1rem;border-radius:30px;border:none;font-size:.74rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:all .2s;font-family:'Lato',sans-serif}
+.btn-copy{background:var(--azul-suave);color:var(--azul-escuro)}.btn-copy:hover{background:var(--azul-escuro);color:var(--dourado-claro)}
+.btn-wpp{background:#e8f5e9;color:#1b5e20}.btn-wpp:hover{background:#25D366;color:#fff}
+.btn-share{background:#f5e6c0;color:#7a5a00}.btn-share:hover{background:var(--dourado);color:#fff}
+.btn-pdf{background:#fde8e8;color:#c0392b}.btn-pdf:hover{background:#c0392b;color:#fff}
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--azul-escuro);color:var(--dourado-claro);padding:.7rem 1.4rem;border-radius:30px;font-size:.8rem;font-weight:700;letter-spacing:.06em;opacity:0;transition:all .3s;pointer-events:none;z-index:10001;white-space:nowrap;border:1px solid rgba(201,168,76,.3)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+footer{background:var(--azul-escuro);border-top:1px solid rgba(201,168,76,.2);padding:2rem;text-align:center}
+footer p{font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.6}
+footer a{color:var(--dourado-claro);text-decoration:none}
+@media(max-width:700px){.cards-grid{grid-template-columns:1fr}.modal{max-height:94vh;border-radius:16px 16px 0 0;align-self:flex-end;max-width:100%}.modal-overlay{padding:0;align-items:flex-end}nav .nav-count{display:none}#search-section,#nav-pills-section{padding-left:1rem;padding-right:1rem}#main{padding:1rem 1rem 4rem}.hero-stats{gap:1.2rem}}
+</style>
+</head>
+<body>
+<div class="toast" id="toast"></div>
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <div class="modal-top">
+      <div class="modal-badge" id="modal-badge"></div>
+      <div class="modal-titulo" id="modal-titulo"></div>
+      <div class="modal-subtitulo" id="modal-subtitulo"></div>
+      <button class="modal-close" id="modal-close">&times;</button>
+    </div>
+    <div class="modal-body"><div class="modal-texto" id="modal-texto"></div></div>
+    <div class="modal-footer">
+      <button class="modal-btn btn-copy" onclick="copyText()">📋 Copiar</button>
+      <button class="modal-btn btn-wpp" onclick="shareWpp()">💬 WhatsApp</button>
+      <button class="modal-btn btn-share" onclick="shareNative()">🔗 Compartilhar</button>
+      <button class="modal-btn btn-pdf" onclick="downloadPDF()">⬇️ PDF</button>
+    </div>
+  </div>
+</div>
+<nav>
+  <a href="#" class="nav-logo">Maria de Nazaré <span>2026</span></a>
+  <span class="nav-count">128 orações · 12 categorias</span>
+</nav>
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="stars" id="stars"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Maria de Nazaré 2026 · Evangelização Digital</div>
+    <h1 class="hero-title">Tesouro de <em>Orações</em></h1>
+    <p class="hero-subtitle">Uma coleção completa para rezar, compartilhar e guardar no coração</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">128</div><div class="hero-stat-label">Orações</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">12</div><div class="hero-stat-label">Categorias</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">∞</div><div class="hero-stat-label">Graças</div></div>
+    </div>
+  </div>
+  <div class="hero-ornament"></div>
+</section>
+<div id="search-section">
+  <div class="search-wrap">
+    <svg class="search-icon" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35"/></svg>
+    <input class="search-input" id="search-input" type="text" placeholder="Buscar por nome, tema ou palavra…" oninput="doSearch()">
+    <button class="search-clear" id="search-clear" onclick="clearSearch()">✕</button>
+  </div>
+  <div class="search-count" id="search-count"></div>
+</div>
+<div id="nav-pills-section">
+  <div class="pills-scroll">
+    <button class="nav-pill active" data-sec="all" onclick="filterSec('all')">✨ Todas</button>
+<button class="nav-pill" data-sec="nossa_senhora" onclick="filterSec('nossa_senhora')">🌹 Orações à Nossa Senhora</button>
+<button class="nav-pill" data-sec="rosario" onclick="filterSec('rosario')">📿 Orações do Rosário</button>
+<button class="nav-pill" data-sec="protecao" onclick="filterSec('protecao')">🛡️ Orações de Proteção</button>
+<button class="nav-pill" data-sec="consagracao" onclick="filterSec('consagracao')">✝️ Orações de Consagração</button>
+<button class="nav-pill" data-sec="intercessao" onclick="filterSec('intercessao')">🙏 Orações de Intercessão</button>
+<button class="nav-pill" data-sec="novenas" onclick="filterSec('novenas')">🕯️ Novenas</button>
+<button class="nav-pill" data-sec="jovens" onclick="filterSec('jovens')">⭐ Orações para Jovens</button>
+<button class="nav-pill" data-sec="liturgicas" onclick="filterSec('liturgicas')">⛪ Orações Litúrgicas</button>
+<button class="nav-pill" data-sec="vida_cotidiana" onclick="filterSec('vida_cotidiana')">☀️ Orações do Dia a Dia</button>
+<button class="nav-pill" data-sec="sacramentos" onclick="filterSec('sacramentos')">🕊️ Sacramentos e Vida Espiritual</button>
+<button class="nav-pill" data-sec="santos" onclick="filterSec('santos')">✨ Aos Santos e Santas</button>
+<button class="nav-pill" data-sec="atos_virtudes" onclick="filterSec('atos_virtudes')">💛 Atos de Virtude e Fé</button>
+  </div>
+</div>
+<div id="main">
+  <div class="container">
+<div class="oracao-section" id="sec-nossa_senhora" data-sec="nossa_senhora">
+  <div class="sec-header"><span class="sec-icon">🌹</span><div class="sec-label" style="color:#2D5F8A">ORAÇÕES À NOSSA SENHORA</div><div class="sec-line" style="background:#2D5F8A"></div></div>
+  <div class="cards-grid">
+    <div class="oracao-card" onclick="openModal(0)" style="--sec-cor:#2D5F8A">
+      <div class="card-icon" style="background:#2D5F8A18;color:#2D5F8A">🌹</div>
+      <div class="card-content">
+        <div class="card-titulo">Ave Maria</div>
+        <div class="card-subtitulo">A oração mais amada do mundo</div>
+        <p class="card-preview">Ave Maria, cheia de graça, o Senhor é convosco. Bendita sois vós entre as mulheres, e bendito é o fruto do vosso ventre, Jesus. Sa…</p>
+      </div>
+      <div class="card-arrow" style="color:#2D5F8A">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(1)" style="--sec-cor:#2D5F8A">
+      <div class="card-icon" style="background:#2D5F8A18;color:#2D5F8A">🌹</div>
+      <div class="card-content">
+        <div class="card-titulo">Salve Rainha</div>
+        <div class="card-subtitulo">Antífona mariana secular</div>
+        <p class="card-preview">Salve, Rainha, Mãe de misericórdia, vida, doçura e esperança nossa, salve! A vós bradamos, os degredados filhos de Eva; a vós susp…</p>
+      </div>
+      <div class="card-arrow" style="color:#2D5F8A">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(2)" style="--sec-cor:#2D5F8A">
+      <div class="card-icon" style="background:#2D5F8A18;color:#2D5F8A">🌹</div>
+      <div class="card-content">
+        <div class="card-titulo">Sub Tuum Praesidium — À Vossa Proteção</div>
+        <div class="card-subtitulo">A mais antiga oração mariana conhecida (séc. III)</div>
+        <p class="card-preview">Sob a vossa proteção nos refugiamos, Santa Mãe de Deus. Não desprezeis as súplicas que vos dirigimos em nossas necessidades, mas l…</p>
+      </div>
+      <div class="card-arrow" style="color:#2D5F8A">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(3)" style="--sec-cor:#2D5F8A">
+      <div class="card-icon" style="background:#2D5F8A18;color:#2D5F8A">🌹</div>
+      <div class="card-content">
+        <div class="card-titulo">Memorare — Lembrai-vos</div>
+        <div class="card-subtitulo">Oração de confiança atribuída a São Bernardo</div>
+        <p class="card-preview">Lembrai-vos, ó piíssima Virgem Maria, que jamais se ouviu dizer que algum daqueles que recorreram à vossa proteção, implorarom o v…</p>
+      </div>
+      <div class="card-arrow" style="color:#2D5F8A">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(4)" style="--sec-cor:#2D5F8A">
+      <div class="card-icon" style="background:#2D5F8A18;color:#2D5F8A">🌹</div>
+      <div class="card-content">
+        <div class="card-titulo">Angelus — Tempo Comum</div>
+        <div class="card-subtitulo">Oração do meio-dia em honra à Anunciação</div>
+        <p class="card-preview">O Anjo do Senhor anunciou a Maria, e ela concebeu do Espírito Santo. Ave Maria... Eis aqui a serva do Senhor, faça-se em mim segun…</p>
+      </div>
+      <div class="card-arrow" style="color:#2D5F8A">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(5)" style="--sec-cor:#2D5F8A">
+      <div class="card-icon" style="background:#2D5F8A18;color:#2D5F8A">🌹</div>
+      <div class="card-content">
+        <div class="card-titulo">Regina Caeli — Rainha do Céu</div>
+        <div class="card-subtitulo">Antífona pascal — rezada no Tempo Pascal</div>
+        <p class="card-preview">Rainha do Céu, alegrai-vos, aleluia, porque Aquele que merecestes trazer no vosso seio, aleluia, ressuscitou como disse, aleluia. …</p>
+      </div>
+      <div class="card-arrow" style="color:#2D5F8A">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(6)" style="--sec-cor:#2D5F8A">
+      <div class="card-icon" style="background:#2D5F8A18;color:#2D5F8A">🌹</div>
+      <div class="card-content">
+        <div class="card-titulo">Alma Redemptoris Mater — Advento</div>
+        <div class="card-subtitulo">Antífona mariana do Advento e Natal</div>
+        <p class="card-preview">Alma Redemptoris Mater, quae pervia caeli porta manes, et stella maris, succurre cadenti, surgere qui curat, populo. — Em portuguê…</p>
+      </div>
+      <div class="card-arrow" style="color:#2D5F8A">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(7)" style="--sec-cor:#2D5F8A">
+      <div class="card-icon" style="background:#2D5F8A18;color:#2D5F8A">🌹</div>
+      <div class="card-content">
+        <div class="card-titulo">Ave, Rainha dos Céus — Quaresma</div>
+        <div class="card-subtitulo">Antífona mariana da Quaresma</div>
+        <p class="card-preview">Ave, Rainha dos céus. Ave, Senhora dos Anjos. Salve, raiz, salve, porta, por quem o mundo teve a luz da aurora. Alegrai-vos, Virge…</p>
+      </div>
+      <div class="card-arrow" style="color:#2D5F8A">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(8)" style="--sec-cor:#2D5F8A">
+      <div class="card-icon" style="background:#2D5F8A18;color:#2D5F8A">🌹</div>
+      <div class="card-content">
+        <div class="card-titulo">Cântico de Nossa Senhora — Magnificat</div>
+        <div class="card-subtitulo">Oração de louvor de Maria (Lc 1,46-55)</div>
+        <p class="card-preview">A minha alma glorifica ao Senhor, e o meu espírito exulta em Deus, meu Salvador, porque olhou para a humildade de sua serva. Dorav…</p>
+      </div>
+      <div class="card-arrow" style="color:#2D5F8A">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(9)" style="--sec-cor:#2D5F8A">
+      <div class="card-icon" style="background:#2D5F8A18;color:#2D5F8A">🌹</div>
+      <div class="card-content">
+        <div class="card-titulo">Maria, Mãe de Graça</div>
+        <div class="card-subtitulo">Oração tradicional de proteção mariana</div>
+        <p class="card-preview">Maria, Mãe de graça, Mãe de misericórdia, defendei-nos do inimigo e recebei-nos na hora da morte. Amém.…</p>
+      </div>
+      <div class="card-arrow" style="color:#2D5F8A">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(10)" style="--sec-cor:#2D5F8A">
+      <div class="card-icon" style="background:#2D5F8A18;color:#2D5F8A">🌹</div>
+      <div class="card-content">
+        <div class="card-titulo">Santa Maria, Socorrei</div>
+        <div class="card-subtitulo">Invocação breve e poderosa a Nossa Senhora</div>
+        <p class="card-preview">Santa Maria, socorrei os miseráveis, confortai os pusilânimes, animais os abatidos, orai pelo povo, intercedei pelo clero, advogai…</p>
+      </div>
+      <div class="card-arrow" style="color:#2D5F8A">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(11)" style="--sec-cor:#2D5F8A">
+      <div class="card-icon" style="background:#2D5F8A18;color:#2D5F8A">🌹</div>
+      <div class="card-content">
+        <div class="card-titulo">Ó Minha Senhora</div>
+        <div class="card-subtitulo">Oração de abandono filial a Maria</div>
+        <p class="card-preview">Ó minha Senhora, ó minha Mãe, eu vos ofereço a mim mesmo inteiramente. E para vos mostrar a minha devoção, vos consagro neste dia …</p>
+      </div>
+      <div class="card-arrow" style="color:#2D5F8A">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(12)" style="--sec-cor:#2D5F8A">
+      <div class="card-icon" style="background:#2D5F8A18;color:#2D5F8A">🌹</div>
+      <div class="card-content">
+        <div class="card-titulo">Pelos Méritos de Maria</div>
+        <div class="card-subtitulo">Oração de intercessão pela mediação de Maria</div>
+        <p class="card-preview">Senhor Jesus Cristo, suplicamos pela intercessão de Maria Santíssima, cuja vida foi digna de toda honra e glória. Pelos seus mérit…</p>
+      </div>
+      <div class="card-arrow" style="color:#2D5F8A">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(13)" style="--sec-cor:#2D5F8A">
+      <div class="card-icon" style="background:#2D5F8A18;color:#2D5F8A">🌹</div>
+      <div class="card-content">
+        <div class="card-titulo">Oração da Medalha Milagrosa</div>
+        <div class="card-subtitulo">Revelada por Nossa Senhora a Santa Catarina Labouré (1830)</div>
+        <p class="card-preview">Ó Maria concebida sem pecado, orai por nós que a vós recorremos. — Reze três vezes — Ó Maria, que fostes concebida sem pecado orig…</p>
+      </div>
+      <div class="card-arrow" style="color:#2D5F8A">→</div>
+    </div>
+  </div>
+</div>
+<div class="oracao-section" id="sec-rosario" data-sec="rosario">
+  <div class="sec-header"><span class="sec-icon">📿</span><div class="sec-label" style="color:#5c3d8a">ORAÇÕES DO ROSÁRIO</div><div class="sec-line" style="background:#5c3d8a"></div></div>
+  <div class="cards-grid">
+    <div class="oracao-card" onclick="openModal(14)" style="--sec-cor:#5c3d8a">
+      <div class="card-icon" style="background:#5c3d8a18;color:#5c3d8a">📿</div>
+      <div class="card-content">
+        <div class="card-titulo">Credo Apostólico</div>
+        <div class="card-subtitulo">Profissão de fé que abre o Rosário</div>
+        <p class="card-preview">Creio em Deus Pai Todo-Poderoso, Criador do Céu e da Terra. E em Jesus Cristo, seu único Filho, Nosso Senhor, que foi concebido pe…</p>
+      </div>
+      <div class="card-arrow" style="color:#5c3d8a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(15)" style="--sec-cor:#5c3d8a">
+      <div class="card-icon" style="background:#5c3d8a18;color:#5c3d8a">📿</div>
+      <div class="card-content">
+        <div class="card-titulo">Glória ao Pai</div>
+        <div class="card-subtitulo">Doxologia rezada ao final de cada dezena</div>
+        <p class="card-preview">Glória ao Pai, ao Filho e ao Espírito Santo. Como era no princípio, agora e sempre, por todos os séculos dos séculos. Amém.…</p>
+      </div>
+      <div class="card-arrow" style="color:#5c3d8a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(16)" style="--sec-cor:#5c3d8a">
+      <div class="card-icon" style="background:#5c3d8a18;color:#5c3d8a">📿</div>
+      <div class="card-content">
+        <div class="card-titulo">Oração de Fátima</div>
+        <div class="card-subtitulo">Ensinada por Nossa Senhora às crianças em 1917</div>
+        <p class="card-preview">Ó meu Jesus, perdoai-nos e livrai-nos do fogo do inferno. Levai as almas todas para o Céu, especialmente as que mais precisarem da…</p>
+      </div>
+      <div class="card-arrow" style="color:#5c3d8a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(17)" style="--sec-cor:#5c3d8a">
+      <div class="card-icon" style="background:#5c3d8a18;color:#5c3d8a">📿</div>
+      <div class="card-content">
+        <div class="card-titulo">Os Mistérios do Rosário</div>
+        <div class="card-subtitulo">Guia completo dos 20 mistérios para meditação</div>
+        <p class="card-preview">MISTÉRIOS GOZOSOS (segunda e sábado) 1. A Anunciação do Anjo a Maria 2. A Visitação de Maria à sua prima Isabel 3. O Nascimento de…</p>
+      </div>
+      <div class="card-arrow" style="color:#5c3d8a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(18)" style="--sec-cor:#5c3d8a">
+      <div class="card-icon" style="background:#5c3d8a18;color:#5c3d8a">📿</div>
+      <div class="card-content">
+        <div class="card-titulo">Terço da Divina Misericórdia</div>
+        <div class="card-subtitulo">Revelado a Santa Faustina Kowalska</div>
+        <p class="card-preview">Para começar: Pai-Nosso... Ave Maria... Credo... Nas contas grandes: Pai eterno, ofereço-vos o Corpo e o Sangue, a Alma e a Divind…</p>
+      </div>
+      <div class="card-arrow" style="color:#5c3d8a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(19)" style="--sec-cor:#5c3d8a">
+      <div class="card-icon" style="background:#5c3d8a18;color:#5c3d8a">📿</div>
+      <div class="card-content">
+        <div class="card-titulo">Orações de Fátima</div>
+        <div class="card-subtitulo">Todas as orações ensinadas pelo Anjo e por Nossa Senhora</div>
+        <p class="card-preview">ORAÇÃO DO ANJO DE PORTUGAL: Meu Deus, eu creio, adoro, espero e amo-Vos. Peço-Vos perdão pelos que não crêem, não adoram, não espe…</p>
+      </div>
+      <div class="card-arrow" style="color:#5c3d8a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(20)" style="--sec-cor:#5c3d8a">
+      <div class="card-icon" style="background:#5c3d8a18;color:#5c3d8a">📿</div>
+      <div class="card-content">
+        <div class="card-titulo">Orações do Anjo de Portugal</div>
+        <div class="card-subtitulo">Reveladas pelo Anjo aos pastorinhos de Fátima</div>
+        <p class="card-preview">PRIMEIRA ORAÇÃO: Meu Deus, eu creio, adoro, espero e amo-Vos. Peço-Vos perdão pelos que não crêem, não adoram, não esperam e não V…</p>
+      </div>
+      <div class="card-arrow" style="color:#5c3d8a">→</div>
+    </div>
+  </div>
+</div>
+<div class="oracao-section" id="sec-protecao" data-sec="protecao">
+  <div class="sec-header"><span class="sec-icon">🛡️</span><div class="sec-label" style="color:#1a5c3a">ORAÇÕES DE PROTEÇÃO</div><div class="sec-line" style="background:#1a5c3a"></div></div>
+  <div class="cards-grid">
+    <div class="oracao-card" onclick="openModal(21)" style="--sec-cor:#1a5c3a">
+      <div class="card-icon" style="background:#1a5c3a18;color:#1a5c3a">🛡️</div>
+      <div class="card-content">
+        <div class="card-titulo">Oração a São Miguel Arcanjo</div>
+        <div class="card-subtitulo">Proteção contra o mal — Papa Leão XIII (1886)</div>
+        <p class="card-preview">São Miguel Arcanjo, defendei-nos no combate, sei nosso protetor contra a maldade e as ciladas do diabo. Que Deus lhe repreenda, or…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a5c3a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(22)" style="--sec-cor:#1a5c3a">
+      <div class="card-icon" style="background:#1a5c3a18;color:#1a5c3a">🛡️</div>
+      <div class="card-content">
+        <div class="card-titulo">A São Gabriel Arcanjo</div>
+        <div class="card-subtitulo">Anjo mensageiro — padroeiro das comunicações</div>
+        <p class="card-preview">Ó glorioso São Gabriel Arcanjo, que fostes enviado por Deus para anunciar a Maria o mais sublime dos mistérios: a Encarnação do Fi…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a5c3a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(23)" style="--sec-cor:#1a5c3a">
+      <div class="card-icon" style="background:#1a5c3a18;color:#1a5c3a">🛡️</div>
+      <div class="card-content">
+        <div class="card-titulo">A São Rafael Arcanjo</div>
+        <div class="card-subtitulo">Anjo da cura e das viagens — protetor dos caminhantes</div>
+        <p class="card-preview">Ó glorioso São Rafael Arcanjo, que acompanhaste Tobias em sua longa viagem e o guardaste de todos os perigos, sede nosso guia e pr…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a5c3a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(24)" style="--sec-cor:#1a5c3a">
+      <div class="card-icon" style="background:#1a5c3a18;color:#1a5c3a">🛡️</div>
+      <div class="card-content">
+        <div class="card-titulo">Oração do Anjo da Guarda</div>
+        <div class="card-subtitulo">Proteção diária do nosso guardião celestial</div>
+        <p class="card-preview">Anjo de Deus, meu guardioso, a quem a bondade divina me confiou, iluminai, guardai, governai e guiai-me. Amém.…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a5c3a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(25)" style="--sec-cor:#1a5c3a">
+      <div class="card-icon" style="background:#1a5c3a18;color:#1a5c3a">🛡️</div>
+      <div class="card-content">
+        <div class="card-titulo">Santo Anjo, Amparo de Minh'alma</div>
+        <div class="card-subtitulo">Oração mais extensa ao Anjo da Guarda</div>
+        <p class="card-preview">Santo Anjo, amparo de minh'alma, guardai-me com vosso escudo luminoso. Afastai de mim todo o mal, todo pensamento impuro, toda ten…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a5c3a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(26)" style="--sec-cor:#1a5c3a">
+      <div class="card-icon" style="background:#1a5c3a18;color:#1a5c3a">🛡️</div>
+      <div class="card-content">
+        <div class="card-titulo">Santo Anjo do Senhor</div>
+        <div class="card-subtitulo">Oração de confiança ao anjo guardião</div>
+        <p class="card-preview">Santo Anjo do Senhor, meu zeloso guardador, se a ti me confiou a piedade divina, sempre me rege, guarda, governa e ilumina. Amém.…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a5c3a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(27)" style="--sec-cor:#1a5c3a">
+      <div class="card-icon" style="background:#1a5c3a18;color:#1a5c3a">🛡️</div>
+      <div class="card-content">
+        <div class="card-titulo">Súplica Ardente aos Santos Anjos</div>
+        <div class="card-subtitulo">Para invocar toda a milícia celestial</div>
+        <p class="card-preview">Ó santos Anjos de Deus, vós que contemplais eternamente o rosto do Pai, vós que sois chama de amor ardente, vós que guerreais pelo…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a5c3a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(28)" style="--sec-cor:#1a5c3a">
+      <div class="card-icon" style="background:#1a5c3a18;color:#1a5c3a">🛡️</div>
+      <div class="card-content">
+        <div class="card-titulo">Oração de Proteção da Família</div>
+        <div class="card-subtitulo">Para a proteção do lar e dos que amamos</div>
+        <p class="card-preview">Senhor Jesus Cristo, colocamos nossa família sob a vossa proteção. Guardai nosso lar de todo o mal, abençoai cada membro desta fam…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a5c3a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(29)" style="--sec-cor:#1a5c3a">
+      <div class="card-icon" style="background:#1a5c3a18;color:#1a5c3a">🛡️</div>
+      <div class="card-content">
+        <div class="card-titulo">Bênção de Viagem</div>
+        <div class="card-subtitulo">Para pedir proteção antes de uma viagem</div>
+        <p class="card-preview">Senhor Jesus Cristo, que sois o caminho, a verdade e a vida, abençoai esta viagem que vamos realizar. Protegei-nos de todo acident…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a5c3a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(30)" style="--sec-cor:#1a5c3a">
+      <div class="card-icon" style="background:#1a5c3a18;color:#1a5c3a">🛡️</div>
+      <div class="card-content">
+        <div class="card-titulo">Medalha de São Bento</div>
+        <div class="card-subtitulo">Oração exorcística da Medalha de São Bento</div>
+        <p class="card-preview">Que a santa Cruz seja minha luz! Que o dragão não seja meu guia! Retira-te, Satanás! Nunca me aconselhes coisas vãs. O que me ofer…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a5c3a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(31)" style="--sec-cor:#1a5c3a">
+      <div class="card-icon" style="background:#1a5c3a18;color:#1a5c3a">🛡️</div>
+      <div class="card-content">
+        <div class="card-titulo">Contra Maus Pensamentos</div>
+        <div class="card-subtitulo">Para vencer as tentações da mente</div>
+        <p class="card-preview">Senhor Jesus Cristo, vós que conheceis os pensamentos do coração, purificai a minha mente. Afastai de mim todo pensamento impuro, …</p>
+      </div>
+      <div class="card-arrow" style="color:#1a5c3a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(32)" style="--sec-cor:#1a5c3a">
+      <div class="card-icon" style="background:#1a5c3a18;color:#1a5c3a">🛡️</div>
+      <div class="card-content">
+        <div class="card-titulo">Couraça de São Patrício</div>
+        <div class="card-subtitulo">Poderosa oração de proteção atribuída a São Patrício (séc. V)</div>
+        <p class="card-preview">Levanto-me hoje com o poder imenso da Trindade, credo na Trindade, confissão da Unidade do Criador do universo. Levanto-me hoje co…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a5c3a">→</div>
+    </div>
+  </div>
+</div>
+<div class="oracao-section" id="sec-consagracao" data-sec="consagracao">
+  <div class="sec-header"><span class="sec-icon">✝️</span><div class="sec-label" style="color:#8a3d1a">ORAÇÕES DE CONSAGRAÇÃO</div><div class="sec-line" style="background:#8a3d1a"></div></div>
+  <div class="cards-grid">
+    <div class="oracao-card" onclick="openModal(33)" style="--sec-cor:#8a3d1a">
+      <div class="card-icon" style="background:#8a3d1a18;color:#8a3d1a">✝️</div>
+      <div class="card-content">
+        <div class="card-titulo">Consagração ao Imaculado Coração de Maria</div>
+        <div class="card-subtitulo">Pedida por Nossa Senhora em Fátima</div>
+        <p class="card-preview">Ó Virgem Maria, Mãe de Deus e nossa Mãe, eu me consagro ao vosso Imaculado Coração com tudo o que sou e tenho. Recebei-me sob a vo…</p>
+      </div>
+      <div class="card-arrow" style="color:#8a3d1a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(34)" style="--sec-cor:#8a3d1a">
+      <div class="card-icon" style="background:#8a3d1a18;color:#8a3d1a">✝️</div>
+      <div class="card-content">
+        <div class="card-titulo">Consagração ao Sagrado Coração de Jesus</div>
+        <div class="card-subtitulo">Ato de entrega ao Coração de Jesus</div>
+        <p class="card-preview">Sagrado Coração de Jesus, que revelastes a Santa Margarida Maria vosso amor infinito pela humanidade, eu me consagro a Vós inteira…</p>
+      </div>
+      <div class="card-arrow" style="color:#8a3d1a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(35)" style="--sec-cor:#8a3d1a">
+      <div class="card-icon" style="background:#8a3d1a18;color:#8a3d1a">✝️</div>
+      <div class="card-content">
+        <div class="card-titulo">Consagração da Família ao Sagrado Coração</div>
+        <div class="card-subtitulo">Para consagrar o lar a Jesus e Maria</div>
+        <p class="card-preview">Ó Sagrado Coração de Jesus, vós que prometestes trazer a paz às famílias, nós vos consagramos e dedicamos nossa família e nosso la…</p>
+      </div>
+      <div class="card-arrow" style="color:#8a3d1a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(36)" style="--sec-cor:#8a3d1a">
+      <div class="card-icon" style="background:#8a3d1a18;color:#8a3d1a">✝️</div>
+      <div class="card-content">
+        <div class="card-titulo">Consagração a Cristo Rei</div>
+        <div class="card-subtitulo">Ato de reconhecimento do reinado de Cristo</div>
+        <p class="card-preview">Ó Jesus Cristo, Rei eterno, que virdes para reinar sobre tudo e todos, nós vos consagramos a nós mesmos, nossas famílias, nossa na…</p>
+      </div>
+      <div class="card-arrow" style="color:#8a3d1a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(37)" style="--sec-cor:#8a3d1a">
+      <div class="card-icon" style="background:#8a3d1a18;color:#8a3d1a">✝️</div>
+      <div class="card-content">
+        <div class="card-titulo">Tomai, Senhor, e Recebei — Suscipe</div>
+        <div class="card-subtitulo">Oração de consagração total de Santo Inácio de Loyola</div>
+        <p class="card-preview">Tomai, Senhor, e recebei toda a minha liberdade, minha memória, meu entendimento e toda a minha vontade. Tudo o que tenho e possuo…</p>
+      </div>
+      <div class="card-arrow" style="color:#8a3d1a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(38)" style="--sec-cor:#8a3d1a">
+      <div class="card-icon" style="background:#8a3d1a18;color:#8a3d1a">✝️</div>
+      <div class="card-content">
+        <div class="card-titulo">Ato de Abandono</div>
+        <div class="card-subtitulo">Oração de confiança total na Providência divina</div>
+        <p class="card-preview">Pai meu, entrego-me a Vós; fazei de mim o que quiserdes. O que quer que façais de mim, agradeço-vos. Estou pronto para tudo, aceit…</p>
+      </div>
+      <div class="card-arrow" style="color:#8a3d1a">→</div>
+    </div>
+  </div>
+</div>
+<div class="oracao-section" id="sec-intercessao" data-sec="intercessao">
+  <div class="sec-header"><span class="sec-icon">🙏</span><div class="sec-label" style="color:#1a4a6b">ORAÇÕES DE INTERCESSÃO</div><div class="sec-line" style="background:#1a4a6b"></div></div>
+  <div class="cards-grid">
+    <div class="oracao-card" onclick="openModal(39)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Oração pelos Pecadores</div>
+        <div class="card-subtitulo">Pela conversão das almas perdidas</div>
+        <p class="card-preview">Ó Maria, cheia de graça, intercedei por todos os pecadores do mundo. Apresentai ao Coração Misericordioso de Jesus as almas que ma…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(40)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Oração pelos Enfermos</div>
+        <div class="card-subtitulo">Por aqueles que sofrem de doenças</div>
+        <p class="card-preview">Senhor Jesus, que percorrestes a Galileia curando os enfermos e aliviando os que sofriam, olhai com misericórdia para os nossos ir…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(41)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Oração pelas Almas do Purgatório</div>
+        <div class="card-subtitulo">Por nossas almas queridas que partiram</div>
+        <p class="card-preview">Misericordioso Senhor, por intercessão de Maria Santíssima, concedei o eterno descanso a todas as almas do purgatório. Eterno desc…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(42)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Dai-lhes, Senhor, o Descanso Eterno</div>
+        <div class="card-subtitulo">Oração pelos fiéis defuntos</div>
+        <p class="card-preview">Dai-lhes, Senhor, o descanso eterno, e a luz perpétua os ilumine. Que repousem em paz. Amém. — Para os falecidos — Senhor, que soi…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(43)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Oração pela Paz no Mundo</div>
+        <div class="card-subtitulo">Mensagem central de Medjugorje e Fátima</div>
+        <p class="card-preview">Deus de paz e amor, olhai para o nosso mundo ferido. Onde há guerra, trazei a paz. Onde há ódio, trazei o amor. Onde há desespero,…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(44)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Pela Paz da Igreja</div>
+        <div class="card-subtitulo">Pela unidade e paz da Igreja Católica</div>
+        <p class="card-preview">Senhor Jesus Cristo, que pedistes ao Pai que todos fossem um, olhai para vossa Igreja, tantas vezes dividida e ferida. Restaurae a…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(45)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Pela Unidade da Igreja</div>
+        <div class="card-subtitulo">Oração ecumênica pela unidade dos cristãos</div>
+        <p class="card-preview">Senhor Jesus, que orastes para que todos fossem um, como Vós sois um com o Pai, olhai para os cristãos divididos. Conduzi-nos todo…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(46)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Pelo Santo Padre</div>
+        <div class="card-subtitulo">Oração pelo Papa e sua missão</div>
+        <p class="card-preview">Senhor Jesus Cristo, que edificastes vossa Igreja sobre Pedro, olhai para o vosso representante na terra, o Santo Padre N. Dai-lhe…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(47)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Pelos Sacerdotes</div>
+        <div class="card-subtitulo">Oração pelo clero e pela santidade sacerdotal</div>
+        <p class="card-preview">Senhor Jesus, Sumo e Eterno Sacerdote, conservai os vossos sacerdotes no abrigo do vosso Sagrado Coração, onde ninguém os pode pre…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(48)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Pelos Pagãos e Não Crentes</div>
+        <div class="card-subtitulo">Pela salvação dos que não conhecem Cristo</div>
+        <p class="card-preview">Senhor Jesus Cristo, vós que morrestes por todos os homens, olhai para aqueles que ainda não vos conhecem. Que a luz do Evangelho …</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(49)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Pelos Pais</div>
+        <div class="card-subtitulo">Pela missão e santificação dos pais</div>
+        <p class="card-preview">Senhor Deus, que instituístes a família como imagem da Santíssima Trindade, abençoai todos os pais e mães. Dai-lhes sabedoria para…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(50)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Pelos Agonizantes</div>
+        <div class="card-subtitulo">Pelos que estão no momento da morte</div>
+        <p class="card-preview">Senhor Jesus, que na Cruz sofrestes a agonia da morte e confiastes vosso espírito ao Pai, olhai para nossos irmãos que agonizam. E…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(51)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Em Qualquer Necessidade</div>
+        <div class="card-subtitulo">Oração para momentos de dificuldade</div>
+        <p class="card-preview">Senhor meu Deus, nesta necessidade que me aflige, venho até Vós com confiança. Vós conheceis minha situação. Vós sabeis o que prec…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(52)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Para Pedir Caridade</div>
+        <div class="card-subtitulo">Pela virtude do amor ao próximo</div>
+        <p class="card-preview">Senhor Jesus, que dissestes que o maior mandamento é amar a Deus e ao próximo, dai-me a graça da caridade. Que eu ame sem interess…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(53)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Para Pedir Paciência</div>
+        <div class="card-subtitulo">Pela virtude da paciência nas provações</div>
+        <p class="card-preview">Senhor Jesus, que sofrestes com paciência infinita toda sorte de humilhações e dores, dai-me a graça da paciência. Nas tribulações…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(54)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Para Pedir Pureza</div>
+        <div class="card-subtitulo">Pela virtude da castidade e pureza de coração</div>
+        <p class="card-preview">Senhor Jesus, vós que sois a pureza infinita, olhai para este coração fraco e inclinado ao mal. Dai-me a graça da pureza. Guardai …</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(55)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Pela Graça da Boa Morte</div>
+        <div class="card-subtitulo">Para pedir uma morte santa e preparada</div>
+        <p class="card-preview">Senhor Jesus, que nos Vossos braços tenho certeza de segurança, obtende-me a graça de morrer bem. Que eu parta desta vida arrepend…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(56)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Pela Própria Salvação</div>
+        <div class="card-subtitulo">Oração pela graça da perseverança final</div>
+        <p class="card-preview">Senhor Deus, vós que quereis que todos sejam salvos e cheguem ao conhecimento da verdade, salvai-me. Dai-me a graça da perseveranç…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(57)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Pelo Perdão dos Pecados</div>
+        <div class="card-subtitulo">Oração de contrito arrependimento</div>
+        <p class="card-preview">Senhor Deus, misericordioso e clemente, lento em irar-se e rico em bondade, eu me arrependendo de todos os meus pecados, prostro-m…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(58)" style="--sec-cor:#1a4a6b">
+      <div class="card-icon" style="background:#1a4a6b18;color:#1a4a6b">🙏</div>
+      <div class="card-content">
+        <div class="card-titulo">Pelo Dom de Lágrimas</div>
+        <div class="card-subtitulo">Para pedir compunção e sensibilidade espiritual</div>
+        <p class="card-preview">Senhor Jesus, que no jardim suastes sangue pela dor dos nossos pecados e choraste diante do túmulo de Lázaro, dai-me o dom das lág…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a4a6b">→</div>
+    </div>
+  </div>
+</div>
+<div class="oracao-section" id="sec-novenas" data-sec="novenas">
+  <div class="sec-header"><span class="sec-icon">🕯️</span><div class="sec-label" style="color:#6b4c11">NOVENAS</div><div class="sec-line" style="background:#6b4c11"></div></div>
+  <div class="cards-grid">
+    <div class="oracao-card" onclick="openModal(59)" style="--sec-cor:#6b4c11">
+      <div class="card-icon" style="background:#6b4c1118;color:#6b4c11">🕯️</div>
+      <div class="card-content">
+        <div class="card-titulo">Novena a Nossa Senhora de Fátima</div>
+        <div class="card-subtitulo">9 dias de oração em honra à aparição de 1917</div>
+        <p class="card-preview">ORAÇÃO PARA TODOS OS DIAS: Ó Nossa Senhora de Fátima, com grande amor e esperança, venho a vós nesta novena. Sei que sois a Mãe de…</p>
+      </div>
+      <div class="card-arrow" style="color:#6b4c11">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(60)" style="--sec-cor:#6b4c11">
+      <div class="card-icon" style="background:#6b4c1118;color:#6b4c11">🕯️</div>
+      <div class="card-content">
+        <div class="card-titulo">Novena a Nossa Senhora de Lourdes</div>
+        <div class="card-subtitulo">Para alcançar curas e graças especiais</div>
+        <p class="card-preview">Ó Nossa Senhora de Lourdes, que aparecestes a Bernadette na gruta de Massabielle, intercedei junto ao vosso Divino Filho por esta …</p>
+      </div>
+      <div class="card-arrow" style="color:#6b4c11">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(61)" style="--sec-cor:#6b4c11">
+      <div class="card-icon" style="background:#6b4c1118;color:#6b4c11">🕯️</div>
+      <div class="card-content">
+        <div class="card-titulo">Novena ao Imaculado Coração de Maria</div>
+        <div class="card-subtitulo">Consagração e reparação ao Coração de Maria</div>
+        <p class="card-preview">Ó Imaculado Coração de Maria, Coração cheio de bondade, mostrais vosso amor por nós. Apresentai a Jesus: [apresente sua intenção] …</p>
+      </div>
+      <div class="card-arrow" style="color:#6b4c11">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(62)" style="--sec-cor:#6b4c11">
+      <div class="card-icon" style="background:#6b4c1118;color:#6b4c11">🕯️</div>
+      <div class="card-content">
+        <div class="card-titulo">Novena de Nossa Senhora do Perpétuo Socorro</div>
+        <div class="card-subtitulo">Para ajuda nas necessidades urgentes</div>
+        <p class="card-preview">Ó Nossa Senhora do Perpétuo Socorro, venho com fé e confiança pedir vossa intercessão. Ouvi meu pedido: [apresente sua intenção] M…</p>
+      </div>
+      <div class="card-arrow" style="color:#6b4c11">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(63)" style="--sec-cor:#6b4c11">
+      <div class="card-icon" style="background:#6b4c1118;color:#6b4c11">🕯️</div>
+      <div class="card-content">
+        <div class="card-titulo">Novena a São José</div>
+        <div class="card-subtitulo">Por intercessão do esposo de Maria</div>
+        <p class="card-preview">ORAÇÃO PARA TODOS OS DIAS: Ó glorioso São José, escolhido por Deus para ser o pai adotivo de Jesus e o esposo virginal de Maria, v…</p>
+      </div>
+      <div class="card-arrow" style="color:#6b4c11">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(64)" style="--sec-cor:#6b4c11">
+      <div class="card-icon" style="background:#6b4c1118;color:#6b4c11">🕯️</div>
+      <div class="card-content">
+        <div class="card-titulo">Novena de São Bento</div>
+        <div class="card-subtitulo">Pai do monaquismo ocidental — protetor contra o mal</div>
+        <p class="card-preview">ORAÇÃO PARA TODOS OS DIAS: Glorioso São Bento, pai e protetor de todos os que buscam Deus na vida monástica e na oração, vós que r…</p>
+      </div>
+      <div class="card-arrow" style="color:#6b4c11">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(65)" style="--sec-cor:#6b4c11">
+      <div class="card-icon" style="background:#6b4c1118;color:#6b4c11">🕯️</div>
+      <div class="card-content">
+        <div class="card-titulo">Novena de Santa Rita de Cássia</div>
+        <div class="card-subtitulo">Padroeira das causas impossíveis — 9 dias de oração</div>
+        <p class="card-preview">ORAÇÃO PARA TODOS OS DIAS: Ó gloriosa Santa Rita, que fostes escolhida por Deus para ser o modelo da paciência, da humildade e do …</p>
+      </div>
+      <div class="card-arrow" style="color:#6b4c11">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(66)" style="--sec-cor:#6b4c11">
+      <div class="card-icon" style="background:#6b4c1118;color:#6b4c11">🕯️</div>
+      <div class="card-content">
+        <div class="card-titulo">Novena de Santa Teresinha do Menino Jesus</div>
+        <div class="card-subtitulo">Doutora da Igreja — o caminho das flores e da confiança</div>
+        <p class="card-preview">ORAÇÃO PARA TODOS OS DIAS: Ó Santa Teresinha do Menino Jesus, que prometestes passar o vosso céu fazendo bem na terra e que deixar…</p>
+      </div>
+      <div class="card-arrow" style="color:#6b4c11">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(67)" style="--sec-cor:#6b4c11">
+      <div class="card-icon" style="background:#6b4c1118;color:#6b4c11">🕯️</div>
+      <div class="card-content">
+        <div class="card-titulo">Novena ao Sagrado Coração de Jesus</div>
+        <div class="card-subtitulo">Rezada especialmente em junho — Mês do Sagrado Coração</div>
+        <p class="card-preview">ORAÇÃO PARA TODOS OS DIAS: Ó dulcíssimo Jesus, cujo Coração transborda de amor pela humanidade pecadora, olhai para mim nesta nove…</p>
+      </div>
+      <div class="card-arrow" style="color:#6b4c11">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(68)" style="--sec-cor:#6b4c11">
+      <div class="card-icon" style="background:#6b4c1118;color:#6b4c11">🕯️</div>
+      <div class="card-content">
+        <div class="card-titulo">Novena de Padre Pio de Pietrelcina</div>
+        <div class="card-subtitulo">Frade capuchinho estigmatizado — intercessor poderoso</div>
+        <p class="card-preview">ORAÇÃO PARA TODOS OS DIAS: Ó Padre Pio, sacerdote e frade capuchinho, que carregastes no vosso corpo os estigmas de Cristo por cin…</p>
+      </div>
+      <div class="card-arrow" style="color:#6b4c11">→</div>
+    </div>
+  </div>
+</div>
+<div class="oracao-section" id="sec-jovens" data-sec="jovens">
+  <div class="sec-header"><span class="sec-icon">⭐</span><div class="sec-label" style="color:#1a5c4a">ORAÇÕES PARA JOVENS</div><div class="sec-line" style="background:#1a5c4a"></div></div>
+  <div class="cards-grid">
+    <div class="oracao-card" onclick="openModal(69)" style="--sec-cor:#1a5c4a">
+      <div class="card-icon" style="background:#1a5c4a18;color:#1a5c4a">⭐</div>
+      <div class="card-content">
+        <div class="card-titulo">Oração do Jovem que Busca a Deus</div>
+        <div class="card-subtitulo">Para quem está começando ou voltando à fé</div>
+        <p class="card-preview">Senhor Jesus, eu sei que o mundo tem muito a me oferecer, mas sinto que só Vós podeis preencher este vazio que carrego. Ajudai-me …</p>
+      </div>
+      <div class="card-arrow" style="color:#1a5c4a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(70)" style="--sec-cor:#1a5c4a">
+      <div class="card-icon" style="background:#1a5c4a18;color:#1a5c4a">⭐</div>
+      <div class="card-content">
+        <div class="card-titulo">Consagração dos Jovens a Maria</div>
+        <div class="card-subtitulo">Para jovens que desejam seguir o caminho mariano</div>
+        <p class="card-preview">Ó Maria, hoje quero me entregar a vós. Sou jovem, cometo erros, tenho dúvidas e medos. Mas acredito que vós me amastes antes de eu…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a5c4a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(71)" style="--sec-cor:#1a5c4a">
+      <div class="card-icon" style="background:#1a5c4a18;color:#1a5c4a">⭐</div>
+      <div class="card-content">
+        <div class="card-titulo">Oração antes dos Estudos</div>
+        <div class="card-subtitulo">Para estudantes em busca de sabedoria</div>
+        <p class="card-preview">Senhor Deus, fonte de toda sabedoria, abençoai meus estudos neste dia. Iluminai minha mente para compreender, fortalecei minha mem…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a5c4a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(72)" style="--sec-cor:#1a5c4a">
+      <div class="card-icon" style="background:#1a5c4a18;color:#1a5c4a">⭐</div>
+      <div class="card-content">
+        <div class="card-titulo">Oração pelos Amigos</div>
+        <div class="card-subtitulo">Para interceder pelos amigos e colegas</div>
+        <p class="card-preview">Jesus amigo, que escolhestes seus discípulos com amor, olhai para os meus amigos. Por aqueles que estão longe de Vós, aproximai-os…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a5c4a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(73)" style="--sec-cor:#1a5c4a">
+      <div class="card-icon" style="background:#1a5c4a18;color:#1a5c4a">⭐</div>
+      <div class="card-content">
+        <div class="card-titulo">Oração pela Vocação</div>
+        <div class="card-subtitulo">Para discernir o chamado de Deus na vida</div>
+        <p class="card-preview">Senhor Jesus, Vós que chamaste cada um pelo nome, falai ao meu coração. Mas quero o que Vós quereis para mim. Ajudai-me a ouvir a …</p>
+      </div>
+      <div class="card-arrow" style="color:#1a5c4a">→</div>
+    </div>
+  </div>
+</div>
+<div class="oracao-section" id="sec-liturgicas" data-sec="liturgicas">
+  <div class="sec-header"><span class="sec-icon">⛪</span><div class="sec-label" style="color:#6b2d6b">ORAÇÕES LITÚRGICAS</div><div class="sec-line" style="background:#6b2d6b"></div></div>
+  <div class="cards-grid">
+    <div class="oracao-card" onclick="openModal(74)" style="--sec-cor:#6b2d6b">
+      <div class="card-icon" style="background:#6b2d6b18;color:#6b2d6b">⛪</div>
+      <div class="card-content">
+        <div class="card-titulo">Pai Nosso</div>
+        <div class="card-subtitulo">A oração ensinada por Jesus — Mt 6,9-13</div>
+        <p class="card-preview">Pai nosso que estais no céu, santificado seja o vosso nome, venha a nós o vosso reino, seja feita a vossa vontade, assim na terra …</p>
+      </div>
+      <div class="card-arrow" style="color:#6b2d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(75)" style="--sec-cor:#6b2d6b">
+      <div class="card-icon" style="background:#6b2d6b18;color:#6b2d6b">⛪</div>
+      <div class="card-content">
+        <div class="card-titulo">Glória a Deus nas Alturas</div>
+        <div class="card-subtitulo">Hino dos anjos — Hino angélico da Missa</div>
+        <p class="card-preview">Glória a Deus nas alturas, e paz na terra aos homens que o Senhor ama. Senhor Deus, Rei dos céus, Deus Pai todo-poderoso, nós vos …</p>
+      </div>
+      <div class="card-arrow" style="color:#6b2d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(76)" style="--sec-cor:#6b2d6b">
+      <div class="card-icon" style="background:#6b2d6b18;color:#6b2d6b">⛪</div>
+      <div class="card-content">
+        <div class="card-titulo">Cântico de Zacarias — Benedictus</div>
+        <div class="card-subtitulo">Oração matinal da Liturgia das Horas (Lc 1,68-79)</div>
+        <p class="card-preview">Bendito seja o Senhor, Deus de Israel, porque visitou e resgatou o seu povo. Suscitou-nos uma força de salvação na casa de Davi, s…</p>
+      </div>
+      <div class="card-arrow" style="color:#6b2d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(77)" style="--sec-cor:#6b2d6b">
+      <div class="card-icon" style="background:#6b2d6b18;color:#6b2d6b">⛪</div>
+      <div class="card-content">
+        <div class="card-titulo">Te Deum</div>
+        <div class="card-subtitulo">Grande hino de ação de graças da Igreja</div>
+        <p class="card-preview">A vós, ó Deus, louvamos, a vós, Senhor, confessamos. A vós, Pai eterno, toda a terra venera. A vós todos os anjos, os céus e todas…</p>
+      </div>
+      <div class="card-arrow" style="color:#6b2d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(78)" style="--sec-cor:#6b2d6b">
+      <div class="card-icon" style="background:#6b2d6b18;color:#6b2d6b">⛪</div>
+      <div class="card-content">
+        <div class="card-titulo">Kyrie Eleison</div>
+        <div class="card-subtitulo">Invocação de misericórdia da liturgia grega</div>
+        <p class="card-preview">Senhor, tende piedade. Senhor, tende piedade. Senhor, tende piedade. Cristo, tende piedade. Cristo, tende piedade. Cristo, tende p…</p>
+      </div>
+      <div class="card-arrow" style="color:#6b2d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(79)" style="--sec-cor:#6b2d6b">
+      <div class="card-icon" style="background:#6b2d6b18;color:#6b2d6b">⛪</div>
+      <div class="card-content">
+        <div class="card-titulo">Cordeiro de Deus — Agnus Dei</div>
+        <div class="card-subtitulo">Oração litúrgica antes da Comunhão</div>
+        <p class="card-preview">Cordeiro de Deus, que tirais o pecado do mundo, tende piedade de nós. Cordeiro de Deus, que tirais o pecado do mundo, tende piedad…</p>
+      </div>
+      <div class="card-arrow" style="color:#6b2d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(80)" style="--sec-cor:#6b2d6b">
+      <div class="card-icon" style="background:#6b2d6b18;color:#6b2d6b">⛪</div>
+      <div class="card-content">
+        <div class="card-titulo">Santo, Santo, Santo — Sanctus</div>
+        <div class="card-subtitulo">Aclamação litúrgica antes da Consagração</div>
+        <p class="card-preview">Santo, Santo, Santo é o Senhor, Deus do universo! Os céus e a terra proclamam a vossa glória. Osana nas alturas! Bendito o que vem…</p>
+      </div>
+      <div class="card-arrow" style="color:#6b2d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(81)" style="--sec-cor:#6b2d6b">
+      <div class="card-icon" style="background:#6b2d6b18;color:#6b2d6b">⛪</div>
+      <div class="card-content">
+        <div class="card-titulo">Sinal da Cruz</div>
+        <div class="card-subtitulo">A oração que resume toda a fé cristã</div>
+        <p class="card-preview">Em nome do Pai, e do Filho, e do Espírito Santo. Amém. — Por este sinal da Santa Cruz, livrai-nos, Senhor Deus nosso, dos nossos i…</p>
+      </div>
+      <div class="card-arrow" style="color:#6b2d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(82)" style="--sec-cor:#6b2d6b">
+      <div class="card-icon" style="background:#6b2d6b18;color:#6b2d6b">⛪</div>
+      <div class="card-content">
+        <div class="card-titulo">Eu Pecador</div>
+        <div class="card-subtitulo">Confissão geral de pecados — Ato Penitencial da Missa</div>
+        <p class="card-preview">Eu confesso a Deus Todo-Poderoso e a vós, irmãos e irmãs, que pequei muitas vezes em pensamentos e palavras, atos e omissões. Por …</p>
+      </div>
+      <div class="card-arrow" style="color:#6b2d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(83)" style="--sec-cor:#6b2d6b">
+      <div class="card-icon" style="background:#6b2d6b18;color:#6b2d6b">⛪</div>
+      <div class="card-content">
+        <div class="card-titulo">O Salutaris Hostia</div>
+        <div class="card-subtitulo">Hino eucarístico de São Tomás de Aquino</div>
+        <p class="card-preview">Ó hóstia salvadora, que abres as portas do céu, nossas guerras são cruéis; dai-nos força, ajudai-nos. Ao único e trino Senhor seja…</p>
+      </div>
+      <div class="card-arrow" style="color:#6b2d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(84)" style="--sec-cor:#6b2d6b">
+      <div class="card-icon" style="background:#6b2d6b18;color:#6b2d6b">⛪</div>
+      <div class="card-content">
+        <div class="card-titulo">Pange Lingua</div>
+        <div class="card-subtitulo">Hino eucarístico de São Tomás de Aquino</div>
+        <p class="card-preview">Louvemos a língua o mistério glorioso do Corpo precioso e do Sangue precioso, que o Rei das nações — fruto do ventre nobre — derra…</p>
+      </div>
+      <div class="card-arrow" style="color:#6b2d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(85)" style="--sec-cor:#6b2d6b">
+      <div class="card-icon" style="background:#6b2d6b18;color:#6b2d6b">⛪</div>
+      <div class="card-content">
+        <div class="card-titulo">Ave Verum</div>
+        <div class="card-subtitulo">Hino eucarístico medieval ao Corpo de Cristo</div>
+        <p class="card-preview">Salve, verdadeiro Corpo de Cristo, nascido da Virgem Maria, que verdadeiramente sofrestes e fostes imolado na Cruz pelo homem. Do …</p>
+      </div>
+      <div class="card-arrow" style="color:#6b2d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(86)" style="--sec-cor:#6b2d6b">
+      <div class="card-icon" style="background:#6b2d6b18;color:#6b2d6b">⛪</div>
+      <div class="card-content">
+        <div class="card-titulo">Laudate Dominum</div>
+        <div class="card-subtitulo">Salmo 117 — Louvor breve ao Senhor</div>
+        <p class="card-preview">Louvai o Senhor, todas as nações! Glorificai-o, todos os povos! Pois é grande o seu amor por nós; a fidelidade do Senhor dura para…</p>
+      </div>
+      <div class="card-arrow" style="color:#6b2d6b">→</div>
+    </div>
+  </div>
+</div>
+<div class="oracao-section" id="sec-vida_cotidiana" data-sec="vida_cotidiana">
+  <div class="sec-header"><span class="sec-icon">☀️</span><div class="sec-label" style="color:#5a6b1a">ORAÇÕES DO DIA A DIA</div><div class="sec-line" style="background:#5a6b1a"></div></div>
+  <div class="cards-grid">
+    <div class="oracao-card" onclick="openModal(87)" style="--sec-cor:#5a6b1a">
+      <div class="card-icon" style="background:#5a6b1a18;color:#5a6b1a">☀️</div>
+      <div class="card-content">
+        <div class="card-titulo">Ao Levantar-se</div>
+        <div class="card-subtitulo">Para começar o dia na presença de Deus</div>
+        <p class="card-preview">Senhor meu Deus, gradeço-vos por mais um dia de vida. Consagro a Vós este dia: meus pensamentos, palavras e ações. Que tudo o que …</p>
+      </div>
+      <div class="card-arrow" style="color:#5a6b1a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(88)" style="--sec-cor:#5a6b1a">
+      <div class="card-icon" style="background:#5a6b1a18;color:#5a6b1a">☀️</div>
+      <div class="card-content">
+        <div class="card-titulo">Ao Deitar-se</div>
+        <div class="card-subtitulo">Para encerrar o dia com gratidão e paz</div>
+        <p class="card-preview">Senhor Deus, neste fim de dia me prostro diante de Vós. Agradeço-vos pelas graças recebidas. Perdoai-me pelos pecados cometidos. P…</p>
+      </div>
+      <div class="card-arrow" style="color:#5a6b1a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(89)" style="--sec-cor:#5a6b1a">
+      <div class="card-icon" style="background:#5a6b1a18;color:#5a6b1a">☀️</div>
+      <div class="card-content">
+        <div class="card-titulo">Bênção dos Alimentos</div>
+        <div class="card-subtitulo">Para rezar antes das refeições</div>
+        <p class="card-preview">Bendize, Senhor, estes alimentos que vamos tomar e a nós que os vamos comer. Que nunca nos falte o pão material nem o pão espiritu…</p>
+      </div>
+      <div class="card-arrow" style="color:#5a6b1a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(90)" style="--sec-cor:#5a6b1a">
+      <div class="card-icon" style="background:#5a6b1a18;color:#5a6b1a">☀️</div>
+      <div class="card-content">
+        <div class="card-titulo">Oferecimento do Dia</div>
+        <div class="card-subtitulo">Consagração matinal do Apostolado da Oração</div>
+        <p class="card-preview">Ó Jesus, pelo Imaculado Coração de Maria, vos ofereço as orações, trabalhos, joias e sofrimentos deste dia, em reparação dos pecad…</p>
+      </div>
+      <div class="card-arrow" style="color:#5a6b1a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(91)" style="--sec-cor:#5a6b1a">
+      <div class="card-icon" style="background:#5a6b1a18;color:#5a6b1a">☀️</div>
+      <div class="card-content">
+        <div class="card-titulo">Antes de Qualquer Atividade</div>
+        <div class="card-subtitulo">Para santificar o trabalho e os afazeres do dia</div>
+        <p class="card-preview">Senhor Jesus, que trabalhasteis durante trinta anos na oficina de José, abençoai o meu trabalho. Que tudo o que eu fizer seja feit…</p>
+      </div>
+      <div class="card-arrow" style="color:#5a6b1a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(92)" style="--sec-cor:#5a6b1a">
+      <div class="card-icon" style="background:#5a6b1a18;color:#5a6b1a">☀️</div>
+      <div class="card-content">
+        <div class="card-titulo">Inspirai, Ó Senhor</div>
+        <div class="card-subtitulo">Oração antes de ler, escrever ou estudar</div>
+        <p class="card-preview">Inspirai, ó Senhor, nossas ações com vossa graça, e acompanhai-as com o vosso auxílio, para que todo o nosso trabalho comece em Vó…</p>
+      </div>
+      <div class="card-arrow" style="color:#5a6b1a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(93)" style="--sec-cor:#5a6b1a">
+      <div class="card-icon" style="background:#5a6b1a18;color:#5a6b1a">☀️</div>
+      <div class="card-content">
+        <div class="card-titulo">Que Vos Seja Agradável</div>
+        <div class="card-subtitulo">Oração de intenção pura antes de agir</div>
+        <p class="card-preview">Que este meu trabalho, esta minha oração, este meu esforço, vos seja agradável, Senhor. Não o faço pela vaidade nem pelo louvor do…</p>
+      </div>
+      <div class="card-arrow" style="color:#5a6b1a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(94)" style="--sec-cor:#5a6b1a">
+      <div class="card-icon" style="background:#5a6b1a18;color:#5a6b1a">☀️</div>
+      <div class="card-content">
+        <div class="card-titulo">Oração Vespertina</div>
+        <div class="card-subtitulo">Para rezar ao final da tarde</div>
+        <p class="card-preview">Senhor Deus, que fizestes o sol baixar no horizonte para indicar que o dia chegou ao fim, agradecemos este dia. As tarefas foram m…</p>
+      </div>
+      <div class="card-arrow" style="color:#5a6b1a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(95)" style="--sec-cor:#5a6b1a">
+      <div class="card-icon" style="background:#5a6b1a18;color:#5a6b1a">☀️</div>
+      <div class="card-content">
+        <div class="card-titulo">Faça-se, Cumpra-se, Seja Louvada</div>
+        <div class="card-subtitulo">Ato de conformidade com a vontade de Deus</div>
+        <p class="card-preview">Faça-se, cumpra-se e seja eternamente louvada a santíssima e adorável vontade de Deus em todas as coisas. Amém.…</p>
+      </div>
+      <div class="card-arrow" style="color:#5a6b1a">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(96)" style="--sec-cor:#5a6b1a">
+      <div class="card-icon" style="background:#5a6b1a18;color:#5a6b1a">☀️</div>
+      <div class="card-content">
+        <div class="card-titulo">Oração do Incenso</div>
+        <div class="card-subtitulo">Acompanha a queima de incenso nas celebrações</div>
+        <p class="card-preview">Que esta oração suba até Vós, Senhor, como a fumaça do incenso diante de Vós. Que o elevar de minhas mãos seja como o sacrifício d…</p>
+      </div>
+      <div class="card-arrow" style="color:#5a6b1a">→</div>
+    </div>
+  </div>
+</div>
+<div class="oracao-section" id="sec-sacramentos" data-sec="sacramentos">
+  <div class="sec-header"><span class="sec-icon">🕊️</span><div class="sec-label" style="color:#1a3d6b">SACRAMENTOS E VIDA ESPIRITUAL</div><div class="sec-line" style="background:#1a3d6b"></div></div>
+  <div class="cards-grid">
+    <div class="oracao-card" onclick="openModal(97)" style="--sec-cor:#1a3d6b">
+      <div class="card-icon" style="background:#1a3d6b18;color:#1a3d6b">🕊️</div>
+      <div class="card-content">
+        <div class="card-titulo">Antes de Comungar</div>
+        <div class="card-subtitulo">Preparação para a Sagrada Comunhão</div>
+        <p class="card-preview">Senhor meu Jesus Cristo, Senhor e Salvador meu, que estais vivo e verdadeiro neste Sacramento, prostro-me diante de Vós. Não sou d…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a3d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(98)" style="--sec-cor:#1a3d6b">
+      <div class="card-icon" style="background:#1a3d6b18;color:#1a3d6b">🕊️</div>
+      <div class="card-content">
+        <div class="card-titulo">Pós-Comunhão</div>
+        <div class="card-subtitulo">Ação de graças após receber a Eucaristia</div>
+        <p class="card-preview">Senhor Jesus, vós que acabastes de entrar em mim neste augusto Sacramento, gradeço-vos por tão grande dom. Que esta Comunhão me tr…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a3d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(99)" style="--sec-cor:#1a3d6b">
+      <div class="card-icon" style="background:#1a3d6b18;color:#1a3d6b">🕊️</div>
+      <div class="card-content">
+        <div class="card-titulo">Comunhão Espiritual</div>
+        <div class="card-subtitulo">Para quando não se pode receber a Comunhão sacramental</div>
+        <p class="card-preview">Jesus meu, eu creio que estais verdadeiramente presente no Santíssimo Sacramento do altar. Amo-vos sobre todas as coisas e desejo …</p>
+      </div>
+      <div class="card-arrow" style="color:#1a3d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(100)" style="--sec-cor:#1a3d6b">
+      <div class="card-icon" style="background:#1a3d6b18;color:#1a3d6b">🕊️</div>
+      <div class="card-content">
+        <div class="card-titulo">Depois da Confissão</div>
+        <div class="card-subtitulo">Ação de graças pelo sacramento do Perdão</div>
+        <p class="card-preview">Senhor Jesus, gradeço-vos pela misericórdia que acabei de receber no sacramento da Confissão. Vosso sangue me purificou. Vosso amo…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a3d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(101)" style="--sec-cor:#1a3d6b">
+      <div class="card-icon" style="background:#1a3d6b18;color:#1a3d6b">🕊️</div>
+      <div class="card-content">
+        <div class="card-titulo">Antes e Depois do Ofício Divino</div>
+        <div class="card-subtitulo">Para a Liturgia das Horas</div>
+        <p class="card-preview">ANTES: Abre, Senhor, a minha boca para que eu louve o vosso nome santo. Purifica meu coração de todos os pensamentos vãos, para qu…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a3d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(102)" style="--sec-cor:#1a3d6b">
+      <div class="card-icon" style="background:#1a3d6b18;color:#1a3d6b">🕊️</div>
+      <div class="card-content">
+        <div class="card-titulo">Invocação do Espírito Santo</div>
+        <div class="card-subtitulo">Para invocar os dons do Espírito Santo</div>
+        <p class="card-preview">Vinde, Espírito Santo, enchei os corações dos vossos fiéis e acendei neles o fogo do vosso amor. Enviai o vosso Espírito e tudo se…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a3d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(103)" style="--sec-cor:#1a3d6b">
+      <div class="card-icon" style="background:#1a3d6b18;color:#1a3d6b">🕊️</div>
+      <div class="card-content">
+        <div class="card-titulo">Vinde, Espírito Criador — Veni Creator (Pentecostes)</div>
+        <div class="card-subtitulo">Hino ao Espírito Santo — rezado em Pentecostes</div>
+        <p class="card-preview">Vinde, Espírito Criador, visitai as almas dos vossos fiéis, enchai de divina graça os corações que criastes. Vós, a quem chamam Pa…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a3d6b">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(104)" style="--sec-cor:#1a3d6b">
+      <div class="card-icon" style="background:#1a3d6b18;color:#1a3d6b">🕊️</div>
+      <div class="card-content">
+        <div class="card-titulo">Vinde, Santo Espírito</div>
+        <div class="card-subtitulo">Sequência de Pentecostes — Veni Sancte Spiritus</div>
+        <p class="card-preview">Vinde, Espírito Santo, mandai do céu um raio de luz. Vinde, pai dos pobres, vinde, doador de dons, vinde, luz dos corações. Consol…</p>
+      </div>
+      <div class="card-arrow" style="color:#1a3d6b">→</div>
+    </div>
+  </div>
+</div>
+<div class="oracao-section" id="sec-santos" data-sec="santos">
+  <div class="sec-header"><span class="sec-icon">✨</span><div class="sec-label" style="color:#8a1a5c">AOS SANTOS E SANTAS</div><div class="sec-line" style="background:#8a1a5c"></div></div>
+  <div class="cards-grid">
+    <div class="oracao-card" onclick="openModal(105)" style="--sec-cor:#8a1a5c">
+      <div class="card-icon" style="background:#8a1a5c18;color:#8a1a5c">✨</div>
+      <div class="card-content">
+        <div class="card-titulo">A Todos os Santos</div>
+        <div class="card-subtitulo">Invocação da comunhão dos santos</div>
+        <p class="card-preview">Santos e Santas de Deus, vós que contemplais o rosto de Deus e intercedeis por nós, orai por nós! Vós que percorrestes o caminho d…</p>
+      </div>
+      <div class="card-arrow" style="color:#8a1a5c">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(106)" style="--sec-cor:#8a1a5c">
+      <div class="card-icon" style="background:#8a1a5c18;color:#8a1a5c">✨</div>
+      <div class="card-content">
+        <div class="card-titulo">A Santa Teresinha do Menino Jesus</div>
+        <div class="card-subtitulo">Padroeira das missões — o pequeno caminho</div>
+        <p class="card-preview">Santa Teresinha, que encontrastes a santidade não em grandes obras mas nos pequenos atos de amor, ensinai-nos o vosso pequeno cami…</p>
+      </div>
+      <div class="card-arrow" style="color:#8a1a5c">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(107)" style="--sec-cor:#8a1a5c">
+      <div class="card-icon" style="background:#8a1a5c18;color:#8a1a5c">✨</div>
+      <div class="card-content">
+        <div class="card-titulo">À Sagrada Família</div>
+        <div class="card-subtitulo">Para famílias e pelo lar cristão</div>
+        <p class="card-preview">Jesus, Maria e José, Sagrada Família de Nazaré, olhai para a nossa família. Jesus, ensinai-nos a obediência. Maria, ensinai-nos a …</p>
+      </div>
+      <div class="card-arrow" style="color:#8a1a5c">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(108)" style="--sec-cor:#8a1a5c">
+      <div class="card-icon" style="background:#8a1a5c18;color:#8a1a5c">✨</div>
+      <div class="card-content">
+        <div class="card-titulo">À Santa Cruz</div>
+        <div class="card-subtitulo">Veneração ao instrumento da nossa salvação</div>
+        <p class="card-preview">Santa Cruz, madeiro glorioso em que foi pregado o Senhor do universo, nós vos adoramos não pelo madeiro, mas por Aquele que nele m…</p>
+      </div>
+      <div class="card-arrow" style="color:#8a1a5c">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(109)" style="--sec-cor:#8a1a5c">
+      <div class="card-icon" style="background:#8a1a5c18;color:#8a1a5c">✨</div>
+      <div class="card-content">
+        <div class="card-titulo">São José, Pai e Protetor</div>
+        <div class="card-subtitulo">Oração ao esposo de Maria e guardião de Jesus</div>
+        <p class="card-preview">São José, pai terno e vigilante, que guardaste Jesus e Maria com todo o cuidado e amor, protegei nossas famílias. Sede o guardião …</p>
+      </div>
+      <div class="card-arrow" style="color:#8a1a5c">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(110)" style="--sec-cor:#8a1a5c">
+      <div class="card-icon" style="background:#8a1a5c18;color:#8a1a5c">✨</div>
+      <div class="card-content">
+        <div class="card-titulo">A Vós, São José, Recorremos</div>
+        <div class="card-subtitulo">Invocação tradicional a São José</div>
+        <p class="card-preview">A vós, São José, recorremos na nossa angústia, e depois de implorar o auxílio de vossa santíssima esposa, solicitamos também com c…</p>
+      </div>
+      <div class="card-arrow" style="color:#8a1a5c">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(111)" style="--sec-cor:#8a1a5c">
+      <div class="card-icon" style="background:#8a1a5c18;color:#8a1a5c">✨</div>
+      <div class="card-content">
+        <div class="card-titulo">Ave José</div>
+        <div class="card-subtitulo">Saudação a São José à imagem do Ave Maria</div>
+        <p class="card-preview">Ave José, cheio de graça, o Senhor é convosco. Bendito sois entre os homens e bendito é o fruto da vossa casa, Jesus. Santo José, …</p>
+      </div>
+      <div class="card-arrow" style="color:#8a1a5c">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(112)" style="--sec-cor:#8a1a5c">
+      <div class="card-icon" style="background:#8a1a5c18;color:#8a1a5c">✨</div>
+      <div class="card-content">
+        <div class="card-titulo">Por Intercessão de São José</div>
+        <div class="card-subtitulo">Para pedir graças pela intercessão de José</div>
+        <p class="card-preview">Ó glorioso São José, esposo da Virgem Maria e pai adotivo de Jesus, vós que conhecestes as preocupações e as angústias da vida hum…</p>
+      </div>
+      <div class="card-arrow" style="color:#8a1a5c">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(113)" style="--sec-cor:#8a1a5c">
+      <div class="card-icon" style="background:#8a1a5c18;color:#8a1a5c">✨</div>
+      <div class="card-content">
+        <div class="card-titulo">Responsório de Santo Antônio</div>
+        <div class="card-subtitulo">Antífona medieval cantada em sua honra — Si quaeris miracula</div>
+        <p class="card-preview">Se buscas milagres, vai a Santo Antônio: morte, erro, calamidade, demônio, lepra e cegueira se afastam; enfermos e possessos são c…</p>
+      </div>
+      <div class="card-arrow" style="color:#8a1a5c">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(114)" style="--sec-cor:#8a1a5c">
+      <div class="card-icon" style="background:#8a1a5c18;color:#8a1a5c">✨</div>
+      <div class="card-content">
+        <div class="card-titulo">Trezena de Santo Antônio</div>
+        <div class="card-subtitulo">13 dias de oração ao Santo dos Milagres — começa em 31 de maio</div>
+        <p class="card-preview">ORAÇÃO PARA TODOS OS 13 DIAS: Glorioso Santo Antônio, Doutor da Igreja e Trabalhador de Milagres, vós que sois chamado de martelo …</p>
+      </div>
+      <div class="card-arrow" style="color:#8a1a5c">→</div>
+    </div>
+  </div>
+</div>
+<div class="oracao-section" id="sec-atos_virtudes" data-sec="atos_virtudes">
+  <div class="sec-header"><span class="sec-icon">💛</span><div class="sec-label" style="color:#7a5a00">ATOS DE VIRTUDE E FÉ</div><div class="sec-line" style="background:#7a5a00"></div></div>
+  <div class="cards-grid">
+    <div class="oracao-card" onclick="openModal(115)" style="--sec-cor:#7a5a00">
+      <div class="card-icon" style="background:#7a5a0018;color:#7a5a00">💛</div>
+      <div class="card-content">
+        <div class="card-titulo">Ato de Fé</div>
+        <div class="card-subtitulo">Profissão explícita de fé em Deus</div>
+        <p class="card-preview">Meu Deus, creio firmemente em tudo o que vós revelasteís e a santa Igreja nos propõe para crermos, porque vós sois a verdade infin…</p>
+      </div>
+      <div class="card-arrow" style="color:#7a5a00">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(116)" style="--sec-cor:#7a5a00">
+      <div class="card-icon" style="background:#7a5a0018;color:#7a5a00">💛</div>
+      <div class="card-content">
+        <div class="card-titulo">Ato de Esperança</div>
+        <div class="card-subtitulo">Confiança na misericórdia e nas promessas de Deus</div>
+        <p class="card-preview">Meu Deus, espero confiante em vós que me dareis, por vossa misericórdia e pelos méritos de Jesus Cristo, a graça de viver bem e a …</p>
+      </div>
+      <div class="card-arrow" style="color:#7a5a00">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(117)" style="--sec-cor:#7a5a00">
+      <div class="card-icon" style="background:#7a5a0018;color:#7a5a00">💛</div>
+      <div class="card-content">
+        <div class="card-titulo">Ato de Caridade</div>
+        <div class="card-subtitulo">Declaração explícita de amor a Deus e ao próximo</div>
+        <p class="card-preview">Meu Deus, amo-vos sobre todas as coisas com todo o meu coração e minha alma, porque vós sois sumamente bom e digno de todo o amor.…</p>
+      </div>
+      <div class="card-arrow" style="color:#7a5a00">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(118)" style="--sec-cor:#7a5a00">
+      <div class="card-icon" style="background:#7a5a0018;color:#7a5a00">💛</div>
+      <div class="card-content">
+        <div class="card-titulo">Atos de Fé, Esperança e Caridade</div>
+        <div class="card-subtitulo">Os três atos teologais juntos</div>
+        <p class="card-preview">ATO DE FÉ: Meu Deus, creio em Vós porque sois a verdade que não falha. ATO DE ESPERANÇA: Meu Deus, espero em Vós porque sois a mis…</p>
+      </div>
+      <div class="card-arrow" style="color:#7a5a00">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(119)" style="--sec-cor:#7a5a00">
+      <div class="card-icon" style="background:#7a5a0018;color:#7a5a00">💛</div>
+      <div class="card-content">
+        <div class="card-titulo">Adoro Te Devote</div>
+        <div class="card-subtitulo">Hino de adoração eucarística de São Tomás de Aquino</div>
+        <p class="card-preview">Adoro-te devoto, Deus escondido, que sob estas formas te ocultas a mim; a ti se submete todo o meu ser, pois contemplando-te, tudo…</p>
+      </div>
+      <div class="card-arrow" style="color:#7a5a00">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(120)" style="--sec-cor:#7a5a00">
+      <div class="card-icon" style="background:#7a5a0018;color:#7a5a00">💛</div>
+      <div class="card-content">
+        <div class="card-titulo">Alma de Cristo</div>
+        <div class="card-subtitulo">Oração mística atribuída a Santo Inácio de Loyola</div>
+        <p class="card-preview">Alma de Cristo, santificai-me. Corpo de Cristo, salvai-me. Sangue de Cristo, embebedai-me. Água do lado de Cristo, lavai-me. Paixã…</p>
+      </div>
+      <div class="card-arrow" style="color:#7a5a00">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(121)" style="--sec-cor:#7a5a00">
+      <div class="card-icon" style="background:#7a5a0018;color:#7a5a00">💛</div>
+      <div class="card-content">
+        <div class="card-titulo">Oração de Jesus</div>
+        <div class="card-subtitulo">Jaculatória mística da espiritualidade oriental</div>
+        <p class="card-preview">Senhor Jesus Cristo, Filho de Deus, tende piedade de mim, pecador. — Repita devagar, com a respiração — Senhor Jesus Cristo, Filho…</p>
+      </div>
+      <div class="card-arrow" style="color:#7a5a00">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(122)" style="--sec-cor:#7a5a00">
+      <div class="card-icon" style="background:#7a5a0018;color:#7a5a00">💛</div>
+      <div class="card-content">
+        <div class="card-titulo">A Deus Uno e Trino</div>
+        <div class="card-subtitulo">Adoração à Santíssima Trindade</div>
+        <p class="card-preview">Glória ao Pai que nos criou. Glória ao Filho que nos redimiu. Glória ao Espírito Santo que nos santifica. Santíssima Trindade, um …</p>
+      </div>
+      <div class="card-arrow" style="color:#7a5a00">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(123)" style="--sec-cor:#7a5a00">
+      <div class="card-icon" style="background:#7a5a0018;color:#7a5a00">💛</div>
+      <div class="card-content">
+        <div class="card-titulo">À Imaculada Conceição</div>
+        <div class="card-subtitulo">Para honrar o privilégio de Maria</div>
+        <p class="card-preview">Ó Maria concebida sem pecado original, nós vos saudamos com alegria. Vós que fostes preservada de toda mácula pelo privilégio sing…</p>
+      </div>
+      <div class="card-arrow" style="color:#7a5a00">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(124)" style="--sec-cor:#7a5a00">
+      <div class="card-icon" style="background:#7a5a0018;color:#7a5a00">💛</div>
+      <div class="card-content">
+        <div class="card-titulo">A Jesus Crucificado</div>
+        <div class="card-subtitulo">Contemplação do amor de Cristo na Cruz</div>
+        <p class="card-preview">Ó Jesus crucificado, eu vos contemplo nesta Cruz e vejo todo o vosso amor por mim. Por estas chagas nas mãos, perdoai as obras que…</p>
+      </div>
+      <div class="card-arrow" style="color:#7a5a00">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(125)" style="--sec-cor:#7a5a00">
+      <div class="card-icon" style="background:#7a5a0018;color:#7a5a00">💛</div>
+      <div class="card-content">
+        <div class="card-titulo">Ao Sagrado Coração</div>
+        <div class="card-subtitulo">Oração de consagração e reparação ao Coração de Jesus</div>
+        <p class="card-preview">Ó docíssimo Jesus, cujo ardente amor pelos homens vos colocou na Cruz, olhai para este coração que se prostra ante Vós. Vos oferec…</p>
+      </div>
+      <div class="card-arrow" style="color:#7a5a00">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(126)" style="--sec-cor:#7a5a00">
+      <div class="card-icon" style="background:#7a5a0018;color:#7a5a00">💛</div>
+      <div class="card-content">
+        <div class="card-titulo">Livrai-me, Senhor Jesus</div>
+        <div class="card-subtitulo">Súplica de proteção e libertação</div>
+        <p class="card-preview">Livrai-me, Senhor Jesus, do mal passado, presente e futuro, de todo o poder do demônio, de todo o pecado e de toda a perturbação d…</p>
+      </div>
+      <div class="card-arrow" style="color:#7a5a00">→</div>
+    </div>
+    <div class="oracao-card" onclick="openModal(127)" style="--sec-cor:#7a5a00">
+      <div class="card-icon" style="background:#7a5a0018;color:#7a5a00">💛</div>
+      <div class="card-content">
+        <div class="card-titulo">Eu Vos Imploro, Dulcíssimo Jesus</div>
+        <div class="card-subtitulo">Súplica de amor e contrição</div>
+        <p class="card-preview">Eu vos imploro, dulcíssimo Jesus, não me abandoneis na hora da tentação. Sede minha força, sede meu escudo, sede minha luz. Vós qu…</p>
+      </div>
+      <div class="card-arrow" style="color:#7a5a00">→</div>
+    </div>
+  </div>
+</div>
+    <div class="no-results" id="no-results"><div class="nr-icon">🕊️</div><p>Nenhuma oração encontrada.<br>Tente outro termo.</p></div>
+  </div>
+</div>
+<footer>
+  <p>✦ Maria de Nazaré 2026 · Evangelização Digital ✦</p>
+  <p style="margin-top:.5rem"><a href="https://instagram.com/maria.denazare2026" target="_blank">@maria.denazare2026</a> &nbsp;·&nbsp; <a href="https://instagram.com/falecomvan" target="_blank">@falecomvan</a></p>
+</footer>
+<script>
+const ORACOES=[{"secao": "nossa_senhora", "secaoLabel": "Orações à Nossa Senhora", "secaoIcon": "🌹", "secaoCor": "#2D5F8A", "titulo": "Ave Maria", "subtitulo": "A oração mais amada do mundo", "texto": "Ave Maria, cheia de graça,\no Senhor é convosco.\nBendita sois vós entre as mulheres,\ne bendito é o fruto do vosso ventre, Jesus.\n\nSanta Maria, Mãe de Deus,\nrogai por nós pecadores,\nagora e na hora da nossa morte.\n\nAmém."}, {"secao": "nossa_senhora", "secaoLabel": "Orações à Nossa Senhora", "secaoIcon": "🌹", "secaoCor": "#2D5F8A", "titulo": "Salve Rainha", "subtitulo": "Antífona mariana secular", "texto": "Salve, Rainha, Mãe de misericórdia,\nvida, doçura e esperança nossa, salve!\nA vós bradamos, os degredados filhos de Eva;\na vós suspiramos, gemendo e chorando\nneste vale de lágrimas.\n\nEia, pois, advogada nossa,\nesses vossos olhos misericordiosos a nós volvei;\ne depois deste desterro,\nmostrai-nos Jesus, bendito fruto do vosso ventre.\nÓ clemente, ó piedosa,\nó doce sempre Virgem Maria.\n\nRogai por nós, Santa Mãe de Deus,\npara que sejamos dignos das promessas de Cristo.\n\nAmém."}, {"secao": "nossa_senhora", "secaoLabel": "Orações à Nossa Senhora", "secaoIcon": "🌹", "secaoCor": "#2D5F8A", "titulo": "Sub Tuum Praesidium — À Vossa Proteção", "subtitulo": "A mais antiga oração mariana conhecida (séc. III)", "texto": "Sob a vossa proteção nos refugiamos,\nSanta Mãe de Deus.\nNão desprezeis as súplicas\nque vos dirigimos em nossas necessidades,\nmas livrai-nos sempre de todos os perigos,\nó Virgem gloriosa e bendita.\n\nAmém."}, {"secao": "nossa_senhora", "secaoLabel": "Orações à Nossa Senhora", "secaoIcon": "🌹", "secaoCor": "#2D5F8A", "titulo": "Memorare — Lembrai-vos", "subtitulo": "Oração de confiança atribuída a São Bernardo", "texto": "Lembrai-vos, ó piíssima Virgem Maria,\nque jamais se ouviu dizer\nque algum daqueles que recorreram à vossa proteção,\nimplorarom o vosso auxílio\nou pediram o vosso socorro,\ntivesse sido abandonado.\n\nAnimado por esta confiança,\na vós recorro, ó Virgem das Virgens, minha Mãe,\na vós venho e, pecador contrito,\nme prostro aos vossos pés.\n\nNão desprezeis minhas súplicas,\nó Mãe do Verbo eterno,\nmas, em vossa clemência, ouvi-me e atendei-me.\n\nAmém."}, {"secao": "nossa_senhora", "secaoLabel": "Orações à Nossa Senhora", "secaoIcon": "🌹", "secaoCor": "#2D5F8A", "titulo": "Angelus — Tempo Comum", "subtitulo": "Oração do meio-dia em honra à Anunciação", "texto": "O Anjo do Senhor anunciou a Maria,\ne ela concebeu do Espírito Santo.\nAve Maria...\n\nEis aqui a serva do Senhor,\nfaça-se em mim segundo a vossa palavra.\nAve Maria...\n\nE o Verbo se fez carne,\ne habitou entre nós.\nAve Maria...\n\nRogai por nós, Santa Mãe de Deus,\npara que sejamos dignos das promessas de Cristo.\n\nOremos:\nInfundi, Senhor, a vossa graça em nossas almas,\npara que nós que, pelo anúncio do Anjo,\nconhecemos a Encarnação de Cristo, vosso Filho,\npela sua Paixão e Cruz sejamos levados\nà glória da Ressurreição.\nPor Cristo, nosso Senhor.\n\nAmém."}, {"secao": "nossa_senhora", "secaoLabel": "Orações à Nossa Senhora", "secaoIcon": "🌹", "secaoCor": "#2D5F8A", "titulo": "Regina Caeli — Rainha do Céu", "subtitulo": "Antífona pascal — rezada no Tempo Pascal", "texto": "Rainha do Céu, alegrai-vos, aleluia,\nporque Aquele que merecestes trazer no vosso seio, aleluia,\nressuscitou como disse, aleluia.\nRogai por nós a Deus, aleluia.\n\nGozai e alegrai-vos, ó Virgem Maria, aleluia,\nporque o Senhor verdadeiramente ressuscitou, aleluia.\n\nOremos:\nÓ Deus, que pela Ressurreição de vosso Filho,\nNosso Senhor Jesus Cristo,\ndestes alegria ao mundo inteiro,\nconcedei-nos, vos pedimos,\nque pela intercessão da Virgem Maria, sua Mãe,\nalcancemos os gozos da vida eterna.\nPor Cristo, nosso Senhor.\n\nAmém."}, {"secao": "nossa_senhora", "secaoLabel": "Orações à Nossa Senhora", "secaoIcon": "🌹", "secaoCor": "#2D5F8A", "titulo": "Alma Redemptoris Mater — Advento", "subtitulo": "Antífona mariana do Advento e Natal", "texto": "Alma Redemptoris Mater,\nquae pervia caeli porta manes,\net stella maris, succurre cadenti,\nsurgere qui curat, populo.\n\n— Em português —\n\nMãe amorosa do Redentor,\nporta sempre aberta do céu\ne estrela do mar,\nassistei ao povo que cai\ne procura levantar-se.\n\nVós que, para admiração da natureza,\ndestes à luz vosso santo Criador,\nVirgem antes e depois do parto,\nrecebendo de Gabriel a saudação de Ave,\ncompadecei-vos de nós pecadores.\n\nAmém."}, {"secao": "nossa_senhora", "secaoLabel": "Orações à Nossa Senhora", "secaoIcon": "🌹", "secaoCor": "#2D5F8A", "titulo": "Ave, Rainha dos Céus — Quaresma", "subtitulo": "Antífona mariana da Quaresma", "texto": "Ave, Rainha dos céus.\nAve, Senhora dos Anjos.\nSalve, raiz, salve, porta,\npor quem o mundo teve a luz da aurora.\n\nAlegrai-vos, Virgem gloriosa,\nbela entre todas as mulheres.\nSalve, ó de beleza extrema,\nrogai a Cristo por nós.\n\nAmém."}, {"secao": "nossa_senhora", "secaoLabel": "Orações à Nossa Senhora", "secaoIcon": "🌹", "secaoCor": "#2D5F8A", "titulo": "Cântico de Nossa Senhora — Magnificat", "subtitulo": "Oração de louvor de Maria (Lc 1,46-55)", "texto": "A minha alma glorifica ao Senhor,\ne o meu espírito exulta em Deus, meu Salvador,\nporque olhou para a humildade de sua serva.\n\nDoravante me chamarão bem-aventurada\ntodas as gerações,\nporque realizou em mim maravilhas\no Todo-Poderoso.\n\nSanto é o seu nome,\ne a sua misericórdia se estende de geração em geração\nsobre os que o temem.\n\nAgiu com a força do seu braço,\ndispersou os soberbos em seus próprios pensamentos;\nderrubou os poderosos de seus tronos\ne exaltou os humildes;\ncumulou de bens os famintos\ne despediu os ricos de mãos vazias.\n\nAcolheu Israel, seu servo,\nlembrado da sua misericórdia\nem favor de Abraão\ne de sua descendência para sempre,\ncomo prometeu a nossos pais.\n\nAmém."}, {"secao": "nossa_senhora", "secaoLabel": "Orações à Nossa Senhora", "secaoIcon": "🌹", "secaoCor": "#2D5F8A", "titulo": "Maria, Mãe de Graça", "subtitulo": "Oração tradicional de proteção mariana", "texto": "Maria, Mãe de graça,\nMãe de misericórdia,\ndefendei-nos do inimigo\ne recebei-nos na hora da morte.\n\nAmém."}, {"secao": "nossa_senhora", "secaoLabel": "Orações à Nossa Senhora", "secaoIcon": "🌹", "secaoCor": "#2D5F8A", "titulo": "Santa Maria, Socorrei", "subtitulo": "Invocação breve e poderosa a Nossa Senhora", "texto": "Santa Maria, socorrei os miseráveis,\nconfortai os pusilânimes,\nanimais os abatidos,\norai pelo povo,\nintercedei pelo clero,\nadvogai pelo devoto feminino.\n\nSintam todos o vosso auxílio\ntodos quantos vos honram.\n\nAmém."}, {"secao": "nossa_senhora", "secaoLabel": "Orações à Nossa Senhora", "secaoIcon": "🌹", "secaoCor": "#2D5F8A", "titulo": "Ó Minha Senhora", "subtitulo": "Oração de abandono filial a Maria", "texto": "Ó minha Senhora,\nó minha Mãe,\neu vos ofereço a mim mesmo inteiramente.\nE para vos mostrar a minha devoção,\nvos consagro neste dia\nmeus olhos, ouvidos, boca, coração,\nem uma palavra, o meu ser todo.\n\nTendo-me, pois, por vosso,\ncuidai de mim, guardai-me\ncomo coisa e propriedade vossa.\n\nAmém."}, {"secao": "nossa_senhora", "secaoLabel": "Orações à Nossa Senhora", "secaoIcon": "🌹", "secaoCor": "#2D5F8A", "titulo": "Pelos Méritos de Maria", "subtitulo": "Oração de intercessão pela mediação de Maria", "texto": "Senhor Jesus Cristo,\nsuplicamos pela intercessão de Maria Santíssima,\ncuja vida foi digna de toda honra e glória.\n\nPelos seus méritos e pureza,\npor sua fé e amor,\npor sua obediência e sacrifício,\nouvide as nossas orações.\n\nNão nos deixes sem o amparo de nossa Mãe.\nAmém."}, {"secao": "nossa_senhora", "secaoLabel": "Orações à Nossa Senhora", "secaoIcon": "🌹", "secaoCor": "#2D5F8A", "titulo": "Oração da Medalha Milagrosa", "subtitulo": "Revelada por Nossa Senhora a Santa Catarina Labouré (1830)", "texto": "Ó Maria concebida sem pecado,\norai por nós que a vós recorremos.\n\n— Reze três vezes —\n\nÓ Maria, que fostes concebida sem pecado original,\nque te revelaste a Santa Catarina,\ncobri-nos com vosso manto de proteção.\nQue esta medalha seja para nós\nescudo contra o mal\ne sinal de vossa proteção.\n\nAmém."}, {"secao": "rosario", "secaoLabel": "Orações do Rosário", "secaoIcon": "📿", "secaoCor": "#5c3d8a", "titulo": "Credo Apostólico", "subtitulo": "Profissão de fé que abre o Rosário", "texto": "Creio em Deus Pai Todo-Poderoso,\nCriador do Céu e da Terra.\nE em Jesus Cristo, seu único Filho, Nosso Senhor,\nque foi concebido pelo poder do Espírito Santo,\nnasceu da Virgem Maria,\npadeceu sob Pôncio Pilatos,\nfoi crucificado, morto e sepultado,\ndesceu à mansão dos mortos,\nressuscitou ao terceiro dia,\nsubiu aos céus,\nestá sentado à direita de Deus Pai Todo-Poderoso,\nde onde há de vir a julgar os vivos e os mortos.\n\nCreio no Espírito Santo,\nna Santa Igreja Católica,\nna comunhão dos Santos,\nna remissão dos pecados,\nna ressurreição da carne,\nna vida eterna.\n\nAmém."}, {"secao": "rosario", "secaoLabel": "Orações do Rosário", "secaoIcon": "📿", "secaoCor": "#5c3d8a", "titulo": "Glória ao Pai", "subtitulo": "Doxologia rezada ao final de cada dezena", "texto": "Glória ao Pai, ao Filho e ao Espírito Santo.\nComo era no princípio, agora e sempre,\npor todos os séculos dos séculos.\n\nAmém."}, {"secao": "rosario", "secaoLabel": "Orações do Rosário", "secaoIcon": "📿", "secaoCor": "#5c3d8a", "titulo": "Oração de Fátima", "subtitulo": "Ensinada por Nossa Senhora às crianças em 1917", "texto": "Ó meu Jesus,\nperdoai-nos e livrai-nos do fogo do inferno.\nLevai as almas todas para o Céu,\nespecialmente as que mais precisarem\nda vossa misericórdia.\n\nAmém."}, {"secao": "rosario", "secaoLabel": "Orações do Rosário", "secaoIcon": "📿", "secaoCor": "#5c3d8a", "titulo": "Os Mistérios do Rosário", "subtitulo": "Guia completo dos 20 mistérios para meditação", "texto": "MISTÉRIOS GOZOSOS (segunda e sábado)\n1. A Anunciação do Anjo a Maria\n2. A Visitação de Maria à sua prima Isabel\n3. O Nascimento de Jesus em Belém\n4. A Apresentação de Jesus no Templo\n5. O Encontro de Jesus no Templo\n\nMISTÉRIOS LUMINOSOS (quinta-feira)\n1. O Batismo de Jesus no Jordão\n2. As Bodas de Caná\n3. O Anúncio do Reino de Deus\n4. A Transfiguração de Jesus\n5. A Instituição da Eucaristia\n\nMISTÉRIOS DOLOROSOS (terça e sexta)\n1. A Agonia de Jesus no Horto\n2. A Flagelação de Jesus\n3. A Coroação de Espinhos\n4. Jesus carregando a Cruz\n5. A Crucificação e morte de Jesus\n\nMISTÉRIOS GLORIOSOS (quarta e domingo)\n1. A Ressurreição de Jesus\n2. A Ascensão de Jesus ao Céu\n3. A Vinda do Espírito Santo\n4. A Assunção de Maria ao Céu\n5. A Coroação de Maria como Rainha do Universo"}, {"secao": "rosario", "secaoLabel": "Orações do Rosário", "secaoIcon": "📿", "secaoCor": "#5c3d8a", "titulo": "Terço da Divina Misericórdia", "subtitulo": "Revelado a Santa Faustina Kowalska", "texto": "Para começar:\nPai-Nosso... Ave Maria... Credo...\n\nNas contas grandes:\nPai eterno, ofereço-vos o Corpo e o Sangue,\na Alma e a Divindade de vosso Filho muito amado,\nNosso Senhor Jesus Cristo,\nem expiação dos nossos pecados\ne dos pecados do mundo inteiro.\n\nNas contas pequenas (10 vezes):\nPela sua dolorosa Paixão,\ntende misericórdia de nós\ne do mundo inteiro.\n\nPara encerrar (3 vezes):\nSanto Deus, Santo Forte, Santo Imortal,\ntende piedade de nós e do mundo inteiro.\n\nAmém."}, {"secao": "rosario", "secaoLabel": "Orações do Rosário", "secaoIcon": "📿", "secaoCor": "#5c3d8a", "titulo": "Orações de Fátima", "subtitulo": "Todas as orações ensinadas pelo Anjo e por Nossa Senhora", "texto": "ORAÇÃO DO ANJO DE PORTUGAL:\nMeu Deus, eu creio, adoro, espero e amo-Vos.\nPeço-Vos perdão pelos que não crêem,\nnão adoram, não esperam e não Vos amam.\n\nSantíssima Trindade, Pai, Filho, Espírito Santo,\nadoro-Vos profundamente e ofereço-Vos\no preciosíssimo Corpo, Sangue, Alma e Divindade\nde Jesus Cristo,\npresente em todos os sacrários da terra,\nem reparação dos ultrajes, sacrilégios e indiferenças\ncom que Ele mesmo é ofendido.\n\nPelas infinitas méritos do seu Sagrado Coração\ne do Imaculado Coração de Maria,\npeço-Vos a conversão dos pobres pecadores.\n\nORAÇÃO DE FÁTIMA:\nÓ meu Jesus, perdoai-nos...\n(ver oração separada)"}, {"secao": "rosario", "secaoLabel": "Orações do Rosário", "secaoIcon": "📿", "secaoCor": "#5c3d8a", "titulo": "Orações do Anjo de Portugal", "subtitulo": "Reveladas pelo Anjo aos pastorinhos de Fátima", "texto": "PRIMEIRA ORAÇÃO:\nMeu Deus, eu creio, adoro, espero e amo-Vos.\nPeço-Vos perdão pelos que não crêem,\nnão adoram, não esperam e não Vos amam.\n\nSEGUNDA ORAÇÃO:\nMeu Deus, eu creio em Vós, adoro-Vos,\nespero em Vós e amo-Vos!\nPeço perdão para os que não crêem,\nnão adoram, não esperam e não Vos amam.\n\nTERCEIRA ORAÇÃO (de adoração eucarística):\nSantíssima Trindade, Pai, Filho, Espírito Santo,\nadoro-Vos profundamente\ne ofereço-Vos o preciosíssimo Corpo,\nSangue, Alma e Divindade de Jesus Cristo,\npresente em todos os sacrários da terra,\nem reparação dos ultrajes, sacrilégios e indiferenças\ncom que Ele mesmo é ofendido.\n\nPelas infinitas méritos do seu Sagrado Coração\ne do Imaculado Coração de Maria,\npeço-Vos a conversão dos pobres pecadores.\n\nAmém."}, {"secao": "protecao", "secaoLabel": "Orações de Proteção", "secaoIcon": "🛡️", "secaoCor": "#1a5c3a", "titulo": "Oração a São Miguel Arcanjo", "subtitulo": "Proteção contra o mal — Papa Leão XIII (1886)", "texto": "São Miguel Arcanjo,\ndefendei-nos no combate,\nsei nosso protetor contra a maldade\ne as ciladas do diabo.\n\nQue Deus lhe repreenda, oramos humildemente,\ne vós, príncipe da milícia celestial,\npelo poder divino,\nprecipitai no inferno Satanás\ne os outros espíritos malignos\nque vagam pelo mundo\npara a perdição das almas.\n\nAmém."}, {"secao": "protecao", "secaoLabel": "Orações de Proteção", "secaoIcon": "🛡️", "secaoCor": "#1a5c3a", "titulo": "A São Gabriel Arcanjo", "subtitulo": "Anjo mensageiro — padroeiro das comunicações", "texto": "Ó glorioso São Gabriel Arcanjo,\nque fostes enviado por Deus\npara anunciar a Maria\no mais sublime dos mistérios:\na Encarnação do Filho de Deus,\n\nassistei a todos os que comunicam a fé,\nprotegei os pregadores e catequistas,\ninspirai todos os que anunciam o Evangelho.\n\nQue, como vós trouxestes a boa notícia a Maria,\nnós também sejamos portadores de alegria\npara o mundo.\n\nAmém."}, {"secao": "protecao", "secaoLabel": "Orações de Proteção", "secaoIcon": "🛡️", "secaoCor": "#1a5c3a", "titulo": "A São Rafael Arcanjo", "subtitulo": "Anjo da cura e das viagens — protetor dos caminhantes", "texto": "Ó glorioso São Rafael Arcanjo,\nque acompanhaste Tobias em sua longa viagem\ne o guardaste de todos os perigos,\n\nsede nosso guia e protetor em todas as viagens.\nProtegei-nos dos acidentes e perigos do caminho.\nCurai os nossos enfermos,\nconsolai os que sofrem\ne conduzi-nos ao destino seguro.\n\nSão Rafael, médico de Deus,\norai por nós.\n\nAmém."}, {"secao": "protecao", "secaoLabel": "Orações de Proteção", "secaoIcon": "🛡️", "secaoCor": "#1a5c3a", "titulo": "Oração do Anjo da Guarda", "subtitulo": "Proteção diária do nosso guardião celestial", "texto": "Anjo de Deus,\nmeu guardioso,\na quem a bondade divina\nme confiou,\niluminai, guardai,\ngovernai e guiai-me.\n\nAmém."}, {"secao": "protecao", "secaoLabel": "Orações de Proteção", "secaoIcon": "🛡️", "secaoCor": "#1a5c3a", "titulo": "Santo Anjo, Amparo de Minh'alma", "subtitulo": "Oração mais extensa ao Anjo da Guarda", "texto": "Santo Anjo, amparo de minh'alma,\nguardai-me com vosso escudo luminoso.\nAfastai de mim todo o mal,\ntodo pensamento impuro,\ntoda tentação do inimigo.\n\nSei para mim como fostes para Tobias:\nguia no caminho,\ncompanheiro na solidão,\nconsolador na tristeza.\n\nConduzi minha alma\npor entre os perigos deste mundo\naté à presença de Deus.\n\nAmém."}, {"secao": "protecao", "secaoLabel": "Orações de Proteção", "secaoIcon": "🛡️", "secaoCor": "#1a5c3a", "titulo": "Santo Anjo do Senhor", "subtitulo": "Oração de confiança ao anjo guardião", "texto": "Santo Anjo do Senhor,\nmeu zeloso guardador,\nse a ti me confiou\na piedade divina,\nsempre me rege,\nguarda, governa e ilumina.\n\nAmém."}, {"secao": "protecao", "secaoLabel": "Orações de Proteção", "secaoIcon": "🛡️", "secaoCor": "#1a5c3a", "titulo": "Súplica Ardente aos Santos Anjos", "subtitulo": "Para invocar toda a milícia celestial", "texto": "Ó santos Anjos de Deus,\nvós que contemplais eternamente o rosto do Pai,\nvós que sois chama de amor ardente,\nvós que guerreais pelo bem das almas,\n\ndesçai em nosso auxílio.\nGuardai-nos do maligno.\nIluminai nossas mentes.\nFortificai nossas vontades.\nConduzi-nos pelo caminho da santidade.\n\nQue a vossa presença luminosa\nafaste todo o poder das trevas.\n\nAmém."}, {"secao": "protecao", "secaoLabel": "Orações de Proteção", "secaoIcon": "🛡️", "secaoCor": "#1a5c3a", "titulo": "Oração de Proteção da Família", "subtitulo": "Para a proteção do lar e dos que amamos", "texto": "Senhor Jesus Cristo,\ncolocamos nossa família sob a vossa proteção.\nGuardai nosso lar de todo o mal,\nabençoai cada membro desta família\ncom saúde, paz e amor.\n\nÓ Maria, Mãe de Jesus e nossa Mãe,\ncobri-nos com o vosso manto de proteção.\nAfastai de nós todo perigo,\ntoda discórdia e todo sofrimento desnecessário.\n\nSão José, guardião da Sagrada Família,\nprotegei nossas famílias\ncomo protegestes Jesus e Maria.\n\nAmém."}, {"secao": "protecao", "secaoLabel": "Orações de Proteção", "secaoIcon": "🛡️", "secaoCor": "#1a5c3a", "titulo": "Bênção de Viagem", "subtitulo": "Para pedir proteção antes de uma viagem", "texto": "Senhor Jesus Cristo,\nque sois o caminho, a verdade e a vida,\nabençoai esta viagem que vamos realizar.\n\nProtegei-nos de todo acidente e perigo.\nSejais nosso guia e companheiro no caminho.\nConduzis-nos ao destino em segurança\ne de volta ao lar com paz.\n\nSão Rafael Arcanjo, protetor dos viajantes,\nacompanhai-nos.\nNossa Senhora, Estrela do Mar,\nguiai nossos passos.\n\nAmém."}, {"secao": "protecao", "secaoLabel": "Orações de Proteção", "secaoIcon": "🛡️", "secaoCor": "#1a5c3a", "titulo": "Medalha de São Bento", "subtitulo": "Oração exorcística da Medalha de São Bento", "texto": "Que a santa Cruz seja minha luz!\nQue o dragão não seja meu guia!\n\nRetira-te, Satanás!\nNunca me aconselhes coisas vãs.\nO que me ofereces é mau.\nBebe tu mesmo o veneno!\n\nCruz do Santo Pai Bento,\nSeja sempre meu sustento.\nAfastai de mim todo o mal,\ntoda maldição e todo poder do inferno.\n\nAmém."}, {"secao": "protecao", "secaoLabel": "Orações de Proteção", "secaoIcon": "🛡️", "secaoCor": "#1a5c3a", "titulo": "Contra Maus Pensamentos", "subtitulo": "Para vencer as tentações da mente", "texto": "Senhor Jesus Cristo,\nvós que conheceis os pensamentos do coração,\npurificai a minha mente.\n\nAfastai de mim todo pensamento impuro,\ntoda fantasia vã,\ntodo desejo que me afaste de Vós.\n\nEnchei minha mente com vossos pensamentos:\no que é verdadeiro, o que é puro,\no que é bom, o que é santo.\n\nMaria Santíssima, Virgem Imaculada,\npelos vossos pensamentos sempre santos,\nobtende-me pureza de mente e coração.\n\nAmém."}, {"secao": "protecao", "secaoLabel": "Orações de Proteção", "secaoIcon": "🛡️", "secaoCor": "#1a5c3a", "titulo": "Couraça de São Patrício", "subtitulo": "Poderosa oração de proteção atribuída a São Patrício (séc. V)", "texto": "Levanto-me hoje\ncom o poder imenso da Trindade,\ncredo na Trindade,\nconfissão da Unidade\ndo Criador do universo.\n\nLevanto-me hoje\ncom o poder do nascimento de Cristo com o seu batismo,\ncom o poder da sua crucificação com o seu sepultamento,\ncom o poder da sua ressurreição com a sua ascensão,\ncom o poder da sua descida para o julgamento final.\n\nLevanto-me hoje\ncom o poder do amor dos querubins,\nna obediência dos anjos,\nno ministério dos arcanjos,\nna esperança da ressurreição para a recompensa,\nnas orações dos patriarcas,\nnas predições dos profetas,\nna pregação dos apóstolos,\nna fé dos confessores,\nna inocência das santas virgens,\nnas obras dos homens justos.\n\nLevanto-me hoje\ncom o poder do céu:\nluz do sol,\nbrilho da lua,\nesplendor do fogo,\nvelocidade do relâmpago,\nrapidez do vento,\nprofundidade do mar,\nestabilidade da terra,\nfirmeza da rocha.\n\nLevanto-me hoje\ncom o poder de Deus para me guiar,\npoder de Deus para me sustentar,\nsabedoria de Deus para me instruir,\nolho de Deus para me preceder,\nouvido de Deus para me escutar,\npalavra de Deus para me falar,\nmão de Deus para me guardar,\ncaminho de Deus para estar diante de mim,\nescudo de Deus para me proteger,\nexército de Deus para me salvar\nde ciladas do demônio,\nde tentações dos vícios,\nde todos que me desejam mal,\nde longe ou de perto,\nsozinho ou em multidão.\n\nInvoco hoje todas essas virtudes\ncontra cada poder cruel e implacável\nque se oponha ao meu corpo e minha alma,\ncontra os encantamentos de falsos profetas,\ncontra as leis negras do paganismo,\ncontra as leis falsas dos hereges,\ncontra a idolatria.\n\nCristo comigo,\nCristo diante de mim,\nCristo atrás de mim,\nCristo em mim,\nCristo abaixo de mim,\nCristo acima de mim,\nCristo à minha direita,\nCristo à minha esquerda,\nCristo quando me deito,\nCristo quando me sento,\nCristo quando me levanto,\nCristo no coração de cada homem que pensa em mim,\nCristo na boca de cada homem que fala de mim,\nCristo em cada olho que me vê,\nCristo em cada ouvido que me escuta.\n\nLevanto-me hoje\ncom o poder imenso da Trindade,\ncredo na Trindade,\nconfissão da Unidade\ndo Criador do universo.\n\nSalvação é do Senhor.\nSalvação é de Cristo.\nQue tua salvação, ó Senhor,\nesteja sempre conosco.\n\nAmém."}, {"secao": "consagracao", "secaoLabel": "Orações de Consagração", "secaoIcon": "✝️", "secaoCor": "#8a3d1a", "titulo": "Consagração ao Imaculado Coração de Maria", "subtitulo": "Pedida por Nossa Senhora em Fátima", "texto": "Ó Virgem Maria,\nMãe de Deus e nossa Mãe,\neu me consagro ao vosso Imaculado Coração\ncom tudo o que sou e tenho.\n\nRecebei-me sob a vossa materna proteção.\nPreservai-me do pecado.\nObtende para mim a graça de amar\na Deus e ao próximo.\n\nOfereço-vos meu coração, minha alma,\nmeu corpo e tudo o que faço,\npara que tudo seja feito em união com Jesus,\npara reparação dos pecados\ne para a salvação das almas.\n\nAmém."}, {"secao": "consagracao", "secaoLabel": "Orações de Consagração", "secaoIcon": "✝️", "secaoCor": "#8a3d1a", "titulo": "Consagração ao Sagrado Coração de Jesus", "subtitulo": "Ato de entrega ao Coração de Jesus", "texto": "Sagrado Coração de Jesus,\nque revelastes a Santa Margarida Maria\nvosso amor infinito pela humanidade,\neu me consagro a Vós inteiramente.\n\nAceitai-me como vosso.\nReinai em meu coração.\nAfastai de mim tudo o que vos desagrada.\nTransformai-me à vossa semelhança.\n\nSagrado Coração de Jesus,\nem Vós confio.\nSagrado Coração de Jesus,\ntende piedade de nós.\n\nAmém."}, {"secao": "consagracao", "secaoLabel": "Orações de Consagração", "secaoIcon": "✝️", "secaoCor": "#8a3d1a", "titulo": "Consagração da Família ao Sagrado Coração", "subtitulo": "Para consagrar o lar a Jesus e Maria", "texto": "Ó Sagrado Coração de Jesus,\nvós que prometestes trazer a paz às famílias,\nnós vos consagramos e dedicamos\nnossa família e nosso lar.\n\nReinai sobre nós, Senhor.\nSede o Rei de nossos corações,\no centro de nossas conversas,\na força de nossos laços.\n\nÓ Maria Imaculada,\nRainha do lar e da família,\nintercedei por nós.\n\nAmém."}, {"secao": "consagracao", "secaoLabel": "Orações de Consagração", "secaoIcon": "✝️", "secaoCor": "#8a3d1a", "titulo": "Consagração a Cristo Rei", "subtitulo": "Ato de reconhecimento do reinado de Cristo", "texto": "Ó Jesus Cristo, Rei eterno,\nque virdes para reinar sobre tudo e todos,\nnós vos consagramos a nós mesmos,\nnossas famílias, nossa nação\ne o mundo inteiro.\n\nQue o vosso reino venha!\nQue a vossa vontade seja feita\nna terra como no céu.\n\nReinai nos corações,\nnas famílias, nas nações.\nQue todos os joelhos se dobrem\nante o vosso nome,\nó Rei dos reis e Senhor dos senhores.\n\nAmém."}, {"secao": "consagracao", "secaoLabel": "Orações de Consagração", "secaoIcon": "✝️", "secaoCor": "#8a3d1a", "titulo": "Tomai, Senhor, e Recebei — Suscipe", "subtitulo": "Oração de consagração total de Santo Inácio de Loyola", "texto": "Tomai, Senhor, e recebei\ntoda a minha liberdade,\nminha memória, meu entendimento\ne toda a minha vontade.\n\nTudo o que tenho e possuo,\nvós mo destes; a vós, Senhor, o devolvo.\nTudo é vosso;\ndisponde a vosso inteiro beneplacito.\nDai-me vosso amor e vossa graça,\nque isso me basta.\n\nAmém."}, {"secao": "consagracao", "secaoLabel": "Orações de Consagração", "secaoIcon": "✝️", "secaoCor": "#8a3d1a", "titulo": "Ato de Abandono", "subtitulo": "Oração de confiança total na Providência divina", "texto": "Pai meu, entrego-me a Vós;\nfazei de mim o que quiserdes.\nO que quer que façais de mim,\nagradeço-vos.\n\nEstou pronto para tudo,\naceitando tudo,\ncontanto que a vossa vontade se cumpra em mim\ne em todas as vossas criaturas.\n\nNão desejo mais nada, meu Deus.\nDepositei a minha alma nas vossas mãos.\nVos dou, meu Deus,\ncom todo o amor do meu coração,\npois vos amo,\ne o amor me exige que me dê,\nque me ponha nas vossas mãos sem reservas,\ncom uma confiança infinita,\npois vós sois meu Pai.\n\nAmém.\n(Pe. Charles de Foucauld)"}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Oração pelos Pecadores", "subtitulo": "Pela conversão das almas perdidas", "texto": "Ó Maria, cheia de graça,\nintercedei por todos os pecadores do mundo.\nApresentai ao Coração Misericordioso de Jesus\nas almas que mais estão em perigo.\n\nSenhor, pela intercessão de Nossa Senhora,\nalcançai a graça da conversão\npara todos aqueles que estão longe de Vós.\nQue nenhuma alma se perca.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Oração pelos Enfermos", "subtitulo": "Por aqueles que sofrem de doenças", "texto": "Senhor Jesus,\nque percorrestes a Galileia curando os enfermos\ne aliviando os que sofriam,\nolhai com misericórdia para os nossos irmãos doentes.\n\nÓ Nossa Senhora de Lourdes,\nsaúde dos enfermos,\nrogai a Jesus que cure,\nconsole e fortaleça\ntodos aqueles que sofrem.\n\nDai-lhes a paciência na dor\ne a confiança na vossa misericórdia, Senhor.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Oração pelas Almas do Purgatório", "subtitulo": "Por nossas almas queridas que partiram", "texto": "Misericordioso Senhor,\npor intercessão de Maria Santíssima,\nconcedei o eterno descanso\na todas as almas do purgatório.\n\nEterno descanso dai-lhes, Senhor,\ne a luz perpétua os ilumine.\nQue repousem em paz.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Dai-lhes, Senhor, o Descanso Eterno", "subtitulo": "Oração pelos fiéis defuntos", "texto": "Dai-lhes, Senhor, o descanso eterno,\ne a luz perpétua os ilumine.\n\nQue repousem em paz.\n\nAmém.\n\n— Para os falecidos —\nSenhor, que sois a ressurreição e a vida,\nconcedei às almas de vossos servos\nque partiram deste mundo,\no eterno descanso no vosso amor.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Oração pela Paz no Mundo", "subtitulo": "Mensagem central de Medjugorje e Fátima", "texto": "Deus de paz e amor,\nolhai para o nosso mundo ferido.\nOnde há guerra, trazei a paz.\nOnde há ódio, trazei o amor.\nOnde há desespero, trazei a esperança.\n\nÓ Maria, Rainha da Paz,\nintercedei por todas as nações.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Pela Paz da Igreja", "subtitulo": "Pela unidade e paz da Igreja Católica", "texto": "Senhor Jesus Cristo,\nque pedistes ao Pai\nque todos fossem um,\nolhai para vossa Igreja,\ntantas vezes dividida e ferida.\n\nRestaurae a unidade.\nAfastai as dissensões e os cismas.\nFortalecei o Santo Padre.\nInspiraí os bispos e sacerdotes.\nReuni o vosso povo em um só rebanho.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Pela Unidade da Igreja", "subtitulo": "Oração ecumênica pela unidade dos cristãos", "texto": "Senhor Jesus,\nque orastes para que todos fossem um,\ncomo Vós sois um com o Pai,\nolhai para os cristãos divididos.\n\nConduzi-nos todos à plena unidade.\nQue a vossa oração seja atendida.\nQue o mundo creia,\npelo testemunho de nossa unidade,\nque fostes enviado pelo Pai.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Pelo Santo Padre", "subtitulo": "Oração pelo Papa e sua missão", "texto": "Senhor Jesus Cristo,\nque edificastes vossa Igreja sobre Pedro,\nolhai para o vosso representante na terra,\no Santo Padre N.\n\nDai-lhe sabedoria para governar,\ncoragem para testemunhar,\nfidelidade ao Evangelho\ne amor ao vosso rebanho.\n\nQue sob sua orientação\na Igreja caminhe com segurança\naté o vosso retorno glorioso.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Pelos Sacerdotes", "subtitulo": "Oração pelo clero e pela santidade sacerdotal", "texto": "Senhor Jesus, Sumo e Eterno Sacerdote,\nconservai os vossos sacerdotes\nno abrigo do vosso Sagrado Coração,\nonde ninguém os pode prejudicar.\n\nMantende imaculadas suas mãos ungidas,\nque todos os dias tocam o vosso Corpo Sacratíssimo.\nGuardai puros os lábios,\nque se tingem com o vosso Sangue Precioso.\nMantende puros os corações,\nselados com o augusto caráter do vosso sacerdócio.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Pelos Pagãos e Não Crentes", "subtitulo": "Pela salvação dos que não conhecem Cristo", "texto": "Senhor Jesus Cristo,\nvós que morrestes por todos os homens,\nolhai para aqueles que ainda não vos conhecem.\n\nQue a luz do Evangelho chegue a todos os povos.\nInspiraí missionários e evangelizadores.\nAbri os corações dos que buscam a verdade.\n\nQue nenhum homem de boa vontade\nfique sem encontrar o caminho de volta a Vós.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Pelos Pais", "subtitulo": "Pela missão e santificação dos pais", "texto": "Senhor Deus,\nque instituístes a família\ncomo imagem da Santíssima Trindade,\nabençoai todos os pais e mães.\n\nDai-lhes sabedoria para educar,\npaciência para acompanhar,\namor para perdoar\ne fé para transmitir.\n\nQue sejam para seus filhos\nim reflexo do vosso amor paterno e materno.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Pelos Agonizantes", "subtitulo": "Pelos que estão no momento da morte", "texto": "Senhor Jesus,\nque na Cruz sofrestes a agonia da morte\ne confiastes vosso espírito ao Pai,\nolhai para nossos irmãos que agonizam.\n\nEstai presente neste momento supremo.\nAfastai o medo e a angústia.\nEnchei seu coração de paz.\nRecebei sua alma com misericórdia.\n\nMaria, Mãe da Boa Morte,\nestai ao lado de todos os agonizantes.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Em Qualquer Necessidade", "subtitulo": "Oração para momentos de dificuldade", "texto": "Senhor meu Deus,\nnesta necessidade que me aflige,\nvenho até Vós com confiança.\n\nVós conheceis minha situação.\nVós sabeis o que preciso.\nVós podeis tudo.\n\nFazei conforme a vossa vontade,\nmas olhai para minha fraqueza\ne atendei ao meu clamor.\n\nEm Vós confio, Senhor.\nNão me abandoneis.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Para Pedir Caridade", "subtitulo": "Pela virtude do amor ao próximo", "texto": "Senhor Jesus,\nque dissestes que o maior mandamento\né amar a Deus e ao próximo,\ndai-me a graça da caridade.\n\nQue eu ame sem interesse,\nque eu sirva sem reclamar,\nque eu perdoe sem guardar rancor,\nque eu dê sem esperar retorno.\n\nEnchei meu coração do vosso amor,\npara que eu possa amar como Vós amareis.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Para Pedir Paciência", "subtitulo": "Pela virtude da paciência nas provações", "texto": "Senhor Jesus,\nque sofrestes com paciência infinita\ntoda sorte de humilhações e dores,\ndai-me a graça da paciência.\n\nNas tribulações, que eu não murmure.\nNas esperas, que eu não desanime.\nNas provações, que eu confie em Vós.\n\nQue a paciência opere em mim\num caráter maduro e uma fé provada.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Para Pedir Pureza", "subtitulo": "Pela virtude da castidade e pureza de coração", "texto": "Senhor Jesus,\nvós que sois a pureza infinita,\nolhai para este coração fraco e inclinado ao mal.\n\nDai-me a graça da pureza.\nGuardai meus sentidos,\npurificai meus pensamentos,\nsantificai meu corpo.\n\nMaria, Virgem Imaculada,\nque sois o modelo da pureza perfeita,\nintercedei por mim.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Pela Graça da Boa Morte", "subtitulo": "Para pedir uma morte santa e preparada", "texto": "Senhor Jesus,\nque nos Vossos braços tenho certeza de segurança,\nobtende-me a graça de morrer bem.\n\nQue eu parta desta vida\narrependido dos meus pecados,\nfortalecido pelos sacramentos,\nabandonado na vossa misericórdia.\n\nMaria, Mãe da Boa Morte,\nestai comigo na hora de minha partida.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Pela Própria Salvação", "subtitulo": "Oração pela graça da perseverança final", "texto": "Senhor Deus,\nvós que quereis que todos sejam salvos\ne cheguem ao conhecimento da verdade,\nsalvai-me.\n\nDai-me a graça da perseverança.\nQue eu não me perca no caminho.\nQue eu chegue ao fim desta vida\nvosso servo fiel.\n\nMaria, Mãe da Salvação,\nrogai por mim.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Pelo Perdão dos Pecados", "subtitulo": "Oração de contrito arrependimento", "texto": "Senhor Deus,\nmisericordioso e clemente,\nlento em irar-se e rico em bondade,\neu me arrependendo de todos os meus pecados,\nprostro-me diante de Vós.\n\nPerdoai-me, Senhor.\nLimpai-me de toda a minha iniquidade.\nRestaurae em mim a alegria da vossa salvação.\n\nCriai em mim, ó Deus, um coração puro.\nRenovai em meu interior um espírito firme.\n\nAmém."}, {"secao": "intercessao", "secaoLabel": "Orações de Intercessão", "secaoIcon": "🙏", "secaoCor": "#1a4a6b", "titulo": "Pelo Dom de Lágrimas", "subtitulo": "Para pedir compunção e sensibilidade espiritual", "texto": "Senhor Jesus,\nque no jardim suastes sangue pela dor dos nossos pecados\ne choraste diante do túmulo de Lázaro,\ndai-me o dom das lágrimas.\n\nQue meu coração se comova\ndiante do amor que Vós nos tendes,\ndiante dos meus pecados,\ndiante do sofrimento do próximo.\n\nQue as lágrimas de compunção\nlimpem minha alma\ne me unam mais a Vós.\n\nAmém."}, {"secao": "novenas", "secaoLabel": "Novenas", "secaoIcon": "🕯️", "secaoCor": "#6b4c11", "titulo": "Novena a Nossa Senhora de Fátima", "subtitulo": "9 dias de oração em honra à aparição de 1917", "texto": "ORAÇÃO PARA TODOS OS DIAS:\n\nÓ Nossa Senhora de Fátima,\ncom grande amor e esperança,\nvenho a vós nesta novena.\nSei que sois a Mãe de Deus\ne minha Mãe querida.\n\nDai-me um coração que ama a Deus acima de tudo,\nque reza com fervor,\nque faz penitência com alegria.\n\nApresento minha petição:\n[apresente sua intenção]\n\nConfio no vosso poderoso patrocínio.\nAmém.\n\n— Reze 1 Ave Maria, 1 Pai Nosso e 1 Glória —"}, {"secao": "novenas", "secaoLabel": "Novenas", "secaoIcon": "🕯️", "secaoCor": "#6b4c11", "titulo": "Novena a Nossa Senhora de Lourdes", "subtitulo": "Para alcançar curas e graças especiais", "texto": "Ó Nossa Senhora de Lourdes,\nque aparecestes a Bernadette na gruta de Massabielle,\n\nintercedei junto ao vosso Divino Filho\npor esta graça que humildemente peço:\n[apresente sua intenção]\n\nAmém.\n\n— Reze 3 Ave Marias —"}, {"secao": "novenas", "secaoLabel": "Novenas", "secaoIcon": "🕯️", "secaoCor": "#6b4c11", "titulo": "Novena ao Imaculado Coração de Maria", "subtitulo": "Consagração e reparação ao Coração de Maria", "texto": "Ó Imaculado Coração de Maria,\nCoração cheio de bondade,\nmostrais vosso amor por nós.\n\nApresentai a Jesus:\n[apresente sua intenção]\n\nAmém.\n\n— Reze 1 Ave Maria —"}, {"secao": "novenas", "secaoLabel": "Novenas", "secaoIcon": "🕯️", "secaoCor": "#6b4c11", "titulo": "Novena de Nossa Senhora do Perpétuo Socorro", "subtitulo": "Para ajuda nas necessidades urgentes", "texto": "Ó Nossa Senhora do Perpétuo Socorro,\nvenho com fé e confiança\npedir vossa intercessão.\n\nOuvi meu pedido:\n[apresente sua intenção]\n\nMãe do Perpétuo Socorro,\nsocorrei-me sempre.\n\nAmém.\n\n— Reze 1 Ave Maria —"}, {"secao": "novenas", "secaoLabel": "Novenas", "secaoIcon": "🕯️", "secaoCor": "#6b4c11", "titulo": "Novena a São José", "subtitulo": "Por intercessão do esposo de Maria", "texto": "ORAÇÃO PARA TODOS OS DIAS:\n\nÓ glorioso São José,\nescolhido por Deus para ser o pai adotivo de Jesus\ne o esposo virginal de Maria,\nvenho hoje a vós com confiança.\n\nFosteis fiel em vossa missão.\nFosteis protetor e provedor da Sagrada Família.\nSejais também meu protetor e intercessor.\n\nApresento a vós minha necessidade:\n[apresente sua intenção]\n\nSão José, rogai por nós.\nAmém.\n\n— Reze 1 Pai Nosso, 1 Ave Maria, 1 Glória —"}, {"secao": "novenas", "secaoLabel": "Novenas", "secaoIcon": "🕯️", "secaoCor": "#6b4c11", "titulo": "Novena de São Bento", "subtitulo": "Pai do monaquismo ocidental — protetor contra o mal", "texto": "ORAÇÃO PARA TODOS OS DIAS:\n\nGlorioso São Bento,\npai e protetor de todos os que buscam Deus\nna vida monástica e na oração,\nvós que recebestes do Senhor\npoder especial contra o demônio,\nintercedei por nós.\n\nDefendei-nos de todas as armadilhas do maligno.\nProtegei nossos lares, nossas famílias\ne nossos corpos e almas\nde todo o poder do mal.\n\nQue a vossa Medalha Santa\nseja escudo e proteção\ncontra toda maldade e veneno espiritual.\n\nApresento a vós minha intenção:\n[apresente sua petição]\n\nSão Bento, rogai por nós!\nAmém.\n\n— Reze 1 Pai Nosso, 1 Ave Maria e 1 Glória —\n\nORAÇÃO DA MEDALHA DE SÃO BENTO:\nQue a Santa Cruz seja minha luz!\nQue o dragão não seja meu guia!\nRetira-te, Satanás!\nNunca me aconselhes coisas vãs.\nO que me ofereces é mau.\nBebe tu mesmo o teu veneno!\nAmém."}, {"secao": "novenas", "secaoLabel": "Novenas", "secaoIcon": "🕯️", "secaoCor": "#6b4c11", "titulo": "Novena de Santa Rita de Cássia", "subtitulo": "Padroeira das causas impossíveis — 9 dias de oração", "texto": "ORAÇÃO PARA TODOS OS DIAS:\n\nÓ gloriosa Santa Rita,\nque fostes escolhida por Deus\npara ser o modelo da paciência,\nda humildade e do amor ao sofrimento,\n\nvós que carregastes no vosso fronte\no espinho da coroa de Cristo\ncomo sinal de união com Ele,\nolhai para mim nesta necessidade.\n\nVós que sois chamada de Padroeira\ndas causas impossíveis e desesperadas,\nnão me deixeis desanimar.\n\nCom confiança filial vos apresento\nminha intenção nesta novena:\n[apresente sua petição]\n\nSanta Rita, vós que dissestes\nque impossível para os homens\né possível para Deus,\nintercedei por mim.\n\nAmém.\n\n— Reze 1 Pai Nosso, 1 Ave Maria e 1 Glória —\n\nINVOCAÇÃO FINAL:\nSanta Rita, Padroeira das causas impossíveis,\nrogai por nós!\nSanta Rita, modelo de paciência cristã,\nrogai por nós!\nSanta Rita, esposa mística de Cristo crucificado,\nrogai por nós!"}, {"secao": "novenas", "secaoLabel": "Novenas", "secaoIcon": "🕯️", "secaoCor": "#6b4c11", "titulo": "Novena de Santa Teresinha do Menino Jesus", "subtitulo": "Doutora da Igreja — o caminho das flores e da confiança", "texto": "ORAÇÃO PARA TODOS OS DIAS:\n\nÓ Santa Teresinha do Menino Jesus,\nque prometestes passar o vosso céu\nfazendo bem na terra\ne que deixareis cair uma chuva de rosas,\n\nolhai para mim com o vosso olhar maternal.\nEnsinai-me o vosso pequeno caminho:\na fazer com amor as pequenas coisas,\na confiar como criança no amor de Deus,\na não temer a fraqueza nem o pecado,\nmas sempre recomeçar.\n\nApresento a vós minha intenção:\n[apresente sua petição]\n\nQue vossas rosas sejam sinal\nde que minha oração foi ouvida.\n\nSanta Teresinha, rogai por nós!\nAmém.\n\n— Reze 1 Pai Nosso, 1 Ave Maria e 1 Glória —\n\nJACULATÓRIA:\nJesus, eu confio no vosso amor\ncomo confiou Santa Teresinha.\nAmém."}, {"secao": "novenas", "secaoLabel": "Novenas", "secaoIcon": "🕯️", "secaoCor": "#6b4c11", "titulo": "Novena ao Sagrado Coração de Jesus", "subtitulo": "Rezada especialmente em junho — Mês do Sagrado Coração", "texto": "ORAÇÃO PARA TODOS OS DIAS:\n\nÓ dulcíssimo Jesus,\ncujo Coração transborda de amor\npela humanidade pecadora,\nolhai para mim nesta novena.\n\nVós que revelastes a Santa Margarida Maria\nas riquezas do vosso Coração,\nprometendo graças especiais\na todos que vos honrassem,\ncumpri em mim vossas promessas.\n\nSagrado Coração de Jesus,\nque ardes de amor por nós,\ninflamai também o meu coração\ncom o amor de Vós.\n\nApresento a vós minha intenção:\n[apresente sua petição]\n\nSagrado Coração de Jesus,\neu creio no vosso amor por mim.\nSagrado Coração de Jesus,\nque o vosso reino venha!\n\nAmém.\n\n— Reze 1 Pai Nosso, 1 Ave Maria e 1 Glória —\n\nAS 12 PROMESSAS DO SAGRADO CORAÇÃO:\n1. Darei a paz nas famílias.\n2. Consolarei os aflitos.\n3. Serei o refúgio durante a vida e na hora da morte.\n4. Abençoarei as casas onde a imagem do meu Coração for exposta e honrada.\n5. Acenderá o fervor dos que estiverem mortos na tepidez.\n6. Os pecadores encontrarão no meu Coração a fonte da misericórdia.\n7. As almas frias tornar-se-ão fervorosas.\n8. Abençoarei os lugares onde for exposta esta imagem.\n9. Darei aos sacerdotes o dom de tocar os corações mais endurecidos.\n10. Os que propagarem esta devoção terão o nome escrito no meu Coração.\n11. Darei a todos os que comungarem nos primeiros sextas-feiras durante nove meses consecutivos a graça da perseverança final.\n12. A graça de não morrerem em meu desgosto."}, {"secao": "novenas", "secaoLabel": "Novenas", "secaoIcon": "🕯️", "secaoCor": "#6b4c11", "titulo": "Novena de Padre Pio de Pietrelcina", "subtitulo": "Frade capuchinho estigmatizado — intercessor poderoso", "texto": "ORAÇÃO PARA TODOS OS DIAS:\n\nÓ Padre Pio,\nsacerdote e frade capuchinho,\nque carregastes no vosso corpo os estigmas de Cristo\npor cinquenta anos,\nunindo vosso sofrimento ao da Cruz do Senhor,\n\nolhai para mim com compaixão.\nVós que tantas vezes ouvistes:\n\"Reza, espera e não te preocupes\",\ntransmitís-me essa mesma paz.\n\nIntercedei por mim diante de Deus\npor esta intenção que trago ao coração:\n[apresente sua petição]\n\nPadre Pio, que tínheis o dom\nde ler as almas e consolar os sofrentes,\nvede a minha situação\ne apresentai-a a Jesus.\n\nAmém.\n\n— Reze 1 Pai Nosso, 1 Ave Maria e 1 Glória —\n\nORAÇÃO ATRIBUÍDA A PADRE PIO:\nFica comigo, Senhor,\nporque preciso da tua presença\npara não te esquecer.\nTu sabes o quanto facilmente te abandono.\nFica comigo, Senhor, porque sou fraco\ne preciso da tua força para não cair tantas vezes.\nFica comigo, Senhor, porque tu és a minha vida\ne sem ti perco o fervor.\nAmém."}, {"secao": "jovens", "secaoLabel": "Orações para Jovens", "secaoIcon": "⭐", "secaoCor": "#1a5c4a", "titulo": "Oração do Jovem que Busca a Deus", "subtitulo": "Para quem está começando ou voltando à fé", "texto": "Senhor Jesus,\neu sei que o mundo tem muito a me oferecer,\nmas sinto que só Vós podeis preencher\neste vazio que carrego.\n\nAjudai-me a te conhecer.\nDai-me coragem para seguir-Vos\nmesmo quando for difícil.\n\nMaria, minha Mãe,\npegai na minha mão neste caminho.\n\nAmém."}, {"secao": "jovens", "secaoLabel": "Orações para Jovens", "secaoIcon": "⭐", "secaoCor": "#1a5c4a", "titulo": "Consagração dos Jovens a Maria", "subtitulo": "Para jovens que desejam seguir o caminho mariano", "texto": "Ó Maria,\nhoje quero me entregar a vós.\nSou jovem, cometo erros,\ntenho dúvidas e medos.\n\nMas acredito que vós me amastes\nantes de eu vos amar.\n\nConsagro a vós meu tempo, minha juventude,\nmeus sonhos e meu futuro.\n\nConduzi-me a Jesus.\n\nAmém."}, {"secao": "jovens", "secaoLabel": "Orações para Jovens", "secaoIcon": "⭐", "secaoCor": "#1a5c4a", "titulo": "Oração antes dos Estudos", "subtitulo": "Para estudantes em busca de sabedoria", "texto": "Senhor Deus,\nfonte de toda sabedoria,\nabençoai meus estudos neste dia.\n\nIluminai minha mente para compreender,\nfortalecei minha memória para reter,\ne dai-me a perseverança para não desistir.\n\nNossa Senhora, Sede da Sabedoria,\nintercedei por mim.\n\nAmém."}, {"secao": "jovens", "secaoLabel": "Orações para Jovens", "secaoIcon": "⭐", "secaoCor": "#1a5c4a", "titulo": "Oração pelos Amigos", "subtitulo": "Para interceder pelos amigos e colegas", "texto": "Jesus amigo,\nque escolhestes seus discípulos com amor,\nolhai para os meus amigos.\n\nPor aqueles que estão longe de Vós,\naproximai-os.\nPor aqueles que sofrem,\nconsolai-os.\n\nMaria, Mãe dos jovens,\nabençoai meus amigos.\n\nAmém."}, {"secao": "jovens", "secaoLabel": "Orações para Jovens", "secaoIcon": "⭐", "secaoCor": "#1a5c4a", "titulo": "Oração pela Vocação", "subtitulo": "Para discernir o chamado de Deus na vida", "texto": "Senhor Jesus,\nVós que chamaste cada um pelo nome,\nfalai ao meu coração.\n\nMas quero o que Vós quereis para mim.\nAjudai-me a ouvir a vossa voz.\n\nMaria, que dissestes Faça-se em mim\nsegundo a vossa palavra,\nensinai-me a mesma disponibilidade.\n\nAqui estou, Senhor. Enviai-me.\n\nAmém."}, {"secao": "liturgicas", "secaoLabel": "Orações Litúrgicas", "secaoIcon": "⛪", "secaoCor": "#6b2d6b", "titulo": "Pai Nosso", "subtitulo": "A oração ensinada por Jesus — Mt 6,9-13", "texto": "Pai nosso que estais no céu,\nsantificado seja o vosso nome,\nvenha a nós o vosso reino,\nseja feita a vossa vontade,\nassim na terra como no céu.\n\nO pão nosso de cada dia\nnos dai hoje,\nperdoai as nossas ofensas,\nassim como nós perdoamos\na quem nos tem ofendido,\ne não nos deixeis cair em tentação,\nmas livrai-nos do mal.\n\nAmém."}, {"secao": "liturgicas", "secaoLabel": "Orações Litúrgicas", "secaoIcon": "⛪", "secaoCor": "#6b2d6b", "titulo": "Glória a Deus nas Alturas", "subtitulo": "Hino dos anjos — Hino angélico da Missa", "texto": "Glória a Deus nas alturas,\ne paz na terra aos homens\nque o Senhor ama.\n\nSenhor Deus, Rei dos céus,\nDeus Pai todo-poderoso,\nnós vos louvamos,\nnós vos bendizemos,\nnós vos adoramos,\nnós vos glorificamos,\nnós vos damos graças\npor vossa imensa glória.\n\nSenhor Jesus Cristo,\nFilho Unigênito,\nSenhor Deus, Cordeiro de Deus,\nFilho do Pai;\nvós que tirais o pecado do mundo,\ntende piedade de nós;\nvós que tirais o pecado do mundo,\nacolhei a nossa súplica;\nvós que estais à direita do Pai,\ntende piedade de nós.\n\nPois só vós sois o Santo,\nsó vós, o Senhor,\nsó vós, o Altíssimo,\nJesus Cristo,\ncom o Espírito Santo,\nna glória de Deus Pai.\n\nAmém."}, {"secao": "liturgicas", "secaoLabel": "Orações Litúrgicas", "secaoIcon": "⛪", "secaoCor": "#6b2d6b", "titulo": "Cântico de Zacarias — Benedictus", "subtitulo": "Oração matinal da Liturgia das Horas (Lc 1,68-79)", "texto": "Bendito seja o Senhor, Deus de Israel,\nporque visitou e resgatou o seu povo.\n\nSuscitou-nos uma força de salvação\nna casa de Davi, seu servo,\ncomo prometera pelos seus santos profetas,\ndesde os tempos antigos:\n\nlivrar-nos dos inimigos,\ndas mãos de todos os que nos odeiam;\ncumprir a misericórdia prometida a nossos pais,\ne lembrar-se da sua santa aliança.\n\nE a vós, menino, chamarão Profeta do Altíssimo,\npois ireis diante do Senhor\npara preparar os seus caminhos,\npara anunciar ao seu povo a salvação\npelo perdão dos seus pecados,\npela ternura misericordiosa do nosso Deus,\nque nos visita do alto como luz que nasce.\n\nAmém."}, {"secao": "liturgicas", "secaoLabel": "Orações Litúrgicas", "secaoIcon": "⛪", "secaoCor": "#6b2d6b", "titulo": "Te Deum", "subtitulo": "Grande hino de ação de graças da Igreja", "texto": "A vós, ó Deus, louvamos,\na vós, Senhor, confessamos.\nA vós, Pai eterno,\ntoda a terra venera.\n\nA vós todos os anjos,\nos céus e todas as potestades,\nos querubins e serafins,\nvos proclamam sem cessar:\nSanto, Santo, Santo,\nSenhor Deus dos exércitos.\n\nOs céus e a terra estão cheios\nda majestade da vossa glória.\n\nA vós gloriosa proclamação loa\na assembleia dos apóstolos;\na vós a admirável companhia dos profetas;\na vós o glorioso exército dos mártires.\n\nA vós, pois, suplicamos:\nque socorrais os vossos servos\na quem remistes com o vosso Precioso Sangue.\nFazei-os contar na glória dos vossos santos.\n\nSalvai o vosso povo, Senhor,\ne abençoai a vossa herança.\nGovernai-os e exaltai-os para sempre.\n\nAmém."}, {"secao": "liturgicas", "secaoLabel": "Orações Litúrgicas", "secaoIcon": "⛪", "secaoCor": "#6b2d6b", "titulo": "Kyrie Eleison", "subtitulo": "Invocação de misericórdia da liturgia grega", "texto": "Senhor, tende piedade.\nSenhor, tende piedade.\nSenhor, tende piedade.\n\nCristo, tende piedade.\nCristo, tende piedade.\nCristo, tende piedade.\n\nSenhor, tende piedade.\nSenhor, tende piedade.\nSenhor, tende piedade.\n\n— Kyrie eleison —\n— Christe eleison —\n— Kyrie eleison —"}, {"secao": "liturgicas", "secaoLabel": "Orações Litúrgicas", "secaoIcon": "⛪", "secaoCor": "#6b2d6b", "titulo": "Cordeiro de Deus — Agnus Dei", "subtitulo": "Oração litúrgica antes da Comunhão", "texto": "Cordeiro de Deus,\nque tirais o pecado do mundo,\ntende piedade de nós.\n\nCordeiro de Deus,\nque tirais o pecado do mundo,\ntende piedade de nós.\n\nCordeiro de Deus,\nque tirais o pecado do mundo,\ndai-nos a paz.\n\nAmém."}, {"secao": "liturgicas", "secaoLabel": "Orações Litúrgicas", "secaoIcon": "⛪", "secaoCor": "#6b2d6b", "titulo": "Santo, Santo, Santo — Sanctus", "subtitulo": "Aclamação litúrgica antes da Consagração", "texto": "Santo, Santo, Santo\né o Senhor, Deus do universo!\nOs céus e a terra proclamam a vossa glória.\n\nOsana nas alturas!\n\nBendito o que vem\nem nome do Senhor.\n\nOsana nas alturas!"}, {"secao": "liturgicas", "secaoLabel": "Orações Litúrgicas", "secaoIcon": "⛪", "secaoCor": "#6b2d6b", "titulo": "Sinal da Cruz", "subtitulo": "A oração que resume toda a fé cristã", "texto": "Em nome do Pai,\ne do Filho,\ne do Espírito Santo.\n\nAmém.\n\n—\n\nPor este sinal da Santa Cruz,\nlivrai-nos, Senhor Deus nosso,\ndos nossos inimigos.\n\nEm nome do Pai,\ne do Filho,\ne do Espírito Santo.\n\nAmém."}, {"secao": "liturgicas", "secaoLabel": "Orações Litúrgicas", "secaoIcon": "⛪", "secaoCor": "#6b2d6b", "titulo": "Eu Pecador", "subtitulo": "Confissão geral de pecados — Ato Penitencial da Missa", "texto": "Eu confesso a Deus Todo-Poderoso\ne a vós, irmãos e irmãs,\nque pequei muitas vezes\nem pensamentos e palavras,\natos e omissões.\n\nPor minha culpa,\npor minha tão grande culpa.\n\nPor isso peço à Virgem Maria,\naos anjos e santos\ne a vós, irmãos e irmãs,\nque rogueis por mim\na Deus Nosso Senhor.\n\nAmém."}, {"secao": "liturgicas", "secaoLabel": "Orações Litúrgicas", "secaoIcon": "⛪", "secaoCor": "#6b2d6b", "titulo": "O Salutaris Hostia", "subtitulo": "Hino eucarístico de São Tomás de Aquino", "texto": "Ó hóstia salvadora,\nque abres as portas do céu,\nnossas guerras são cruéis;\ndai-nos força, ajudai-nos.\n\nAo único e trino Senhor\nseja honra e louvor eterno;\nele nos dê a vida\nna pátria celestial.\n\nAmém."}, {"secao": "liturgicas", "secaoLabel": "Orações Litúrgicas", "secaoIcon": "⛪", "secaoCor": "#6b2d6b", "titulo": "Pange Lingua", "subtitulo": "Hino eucarístico de São Tomás de Aquino", "texto": "Louvemos a língua\no mistério glorioso\ndo Corpo precioso\ne do Sangue precioso,\nque o Rei das nações\n— fruto do ventre nobre —\nderramou para resgatar o mundo.\n\nTantum ergo Sacramentum\nvenerémur cérnui:\net antíquum documéntum\nnovo cedat rítui.\nPraestet fides suppleméntum\nsénsuuim deféctui.\n\nAmém."}, {"secao": "liturgicas", "secaoLabel": "Orações Litúrgicas", "secaoIcon": "⛪", "secaoCor": "#6b2d6b", "titulo": "Ave Verum", "subtitulo": "Hino eucarístico medieval ao Corpo de Cristo", "texto": "Salve, verdadeiro Corpo de Cristo,\nnascido da Virgem Maria,\nque verdadeiramente sofrestes\ne fostes imolado na Cruz pelo homem.\n\nDo cujo lado traspassado\nbrotou água e sangue,\nsede para nós o antegosto\nna prova da morte.\n\nÓ doce Jesus, ó piedoso Jesus,\nó Jesus, Filho de Maria,\ntende misericórdia de mim.\n\nAmém."}, {"secao": "liturgicas", "secaoLabel": "Orações Litúrgicas", "secaoIcon": "⛪", "secaoCor": "#6b2d6b", "titulo": "Laudate Dominum", "subtitulo": "Salmo 117 — Louvor breve ao Senhor", "texto": "Louvai o Senhor, todas as nações!\nGlorificai-o, todos os povos!\nPois é grande o seu amor por nós;\na fidelidade do Senhor dura para sempre.\n\nAleluia!\n\nGlória ao Pai, ao Filho e ao Espírito Santo.\nComo era no princípio, agora e sempre,\npor todos os séculos dos séculos.\n\nAmém."}, {"secao": "vida_cotidiana", "secaoLabel": "Orações do Dia a Dia", "secaoIcon": "☀️", "secaoCor": "#5a6b1a", "titulo": "Ao Levantar-se", "subtitulo": "Para começar o dia na presença de Deus", "texto": "Senhor meu Deus,\ngradeço-vos por mais um dia de vida.\nConsagro a Vós este dia:\nmeus pensamentos, palavras e ações.\n\nQue tudo o que eu fizer hoje\nseja para a vossa glória\ne para o bem do próximo.\n\nMaria, Mãe de Deus,\nacompanhai-me neste novo dia.\n\nAmém."}, {"secao": "vida_cotidiana", "secaoLabel": "Orações do Dia a Dia", "secaoIcon": "☀️", "secaoCor": "#5a6b1a", "titulo": "Ao Deitar-se", "subtitulo": "Para encerrar o dia com gratidão e paz", "texto": "Senhor Deus,\nneste fim de dia me prostro diante de Vós.\n\nAgradeço-vos pelas graças recebidas.\nPerdoai-me pelos pecados cometidos.\nProtegei-me durante o repouso desta noite.\n\nEm vossas mãos entrego meu espírito.\nQue eu acorde amanhã renovado\npara continuar servindo-vos.\n\nAnjo da Guarda, velai por mim.\nMaria, minha Mãe, cobri-me com vosso manto.\n\nAmém."}, {"secao": "vida_cotidiana", "secaoLabel": "Orações do Dia a Dia", "secaoIcon": "☀️", "secaoCor": "#5a6b1a", "titulo": "Bênção dos Alimentos", "subtitulo": "Para rezar antes das refeições", "texto": "Bendize, Senhor,\nestes alimentos que vamos tomar\ne a nós que os vamos comer.\n\nQue nunca nos falte o pão material\nnem o pão espiritual,\nque é Vós mesmo, Senhor Jesus.\n\nLembrai-nos dos que passam fome.\nInspira-nos a partilhar o que temos.\n\nAmém."}, {"secao": "vida_cotidiana", "secaoLabel": "Orações do Dia a Dia", "secaoIcon": "☀️", "secaoCor": "#5a6b1a", "titulo": "Oferecimento do Dia", "subtitulo": "Consagração matinal do Apostolado da Oração", "texto": "Ó Jesus, pelo Imaculado Coração de Maria,\nvos ofereço as orações, trabalhos,\njoias e sofrimentos deste dia,\nem reparação dos pecados\ne para as intenções para as quais\nvos dignastes santificar nossas ofensas.\n\nOfereço-vos em especial:\n[intenção pessoal]\n\nAmém."}, {"secao": "vida_cotidiana", "secaoLabel": "Orações do Dia a Dia", "secaoIcon": "☀️", "secaoCor": "#5a6b1a", "titulo": "Antes de Qualquer Atividade", "subtitulo": "Para santificar o trabalho e os afazeres do dia", "texto": "Senhor Jesus,\nque trabalhasteis durante trinta anos\nna oficina de José,\nabençoai o meu trabalho.\n\nQue tudo o que eu fizer\nseja feito com amor e dedicação,\ncomo serviço a Vós e ao próximo.\n\nQue eu não trabalhe só pelo salário,\nmas pela glória de Deus\ne o bem da humanidade.\n\nAmém."}, {"secao": "vida_cotidiana", "secaoLabel": "Orações do Dia a Dia", "secaoIcon": "☀️", "secaoCor": "#5a6b1a", "titulo": "Inspirai, Ó Senhor", "subtitulo": "Oração antes de ler, escrever ou estudar", "texto": "Inspirai, ó Senhor,\nnossas ações com vossa graça,\ne acompanhai-as com o vosso auxílio,\npara que todo o nosso trabalho\ncomece em Vós, continue em Vós\ne termine em Vós.\n\nAmém."}, {"secao": "vida_cotidiana", "secaoLabel": "Orações do Dia a Dia", "secaoIcon": "☀️", "secaoCor": "#5a6b1a", "titulo": "Que Vos Seja Agradável", "subtitulo": "Oração de intenção pura antes de agir", "texto": "Que este meu trabalho,\nesta minha oração,\neste meu esforço,\nvos seja agradável, Senhor.\n\nNão o faço pela vaidade\nnem pelo louvor dos homens,\nmas pela vossa glória\ne pelo amor que vos tenho.\n\nAceitai, Senhor, esta pequena oferta.\n\nAmém."}, {"secao": "vida_cotidiana", "secaoLabel": "Orações do Dia a Dia", "secaoIcon": "☀️", "secaoCor": "#5a6b1a", "titulo": "Oração Vespertina", "subtitulo": "Para rezar ao final da tarde", "texto": "Senhor Deus,\nque fizestes o sol baixar no horizonte\npara indicar que o dia chegou ao fim,\nagradecemos este dia.\n\nAs tarefas foram muitas,\ntalvez nem todas bem cumpridas.\nMas tudo o que fizemos,\nfizemos diante de Vós.\n\nQue o ocaso nos recorde\nda passagem do tempo\ne nos faça desejar mais o eterno.\n\nAmém."}, {"secao": "vida_cotidiana", "secaoLabel": "Orações do Dia a Dia", "secaoIcon": "☀️", "secaoCor": "#5a6b1a", "titulo": "Faça-se, Cumpra-se, Seja Louvada", "subtitulo": "Ato de conformidade com a vontade de Deus", "texto": "Faça-se, cumpra-se e seja eternamente louvada\na santíssima e adorável vontade de Deus\nem todas as coisas.\n\nAmém."}, {"secao": "vida_cotidiana", "secaoLabel": "Orações do Dia a Dia", "secaoIcon": "☀️", "secaoCor": "#5a6b1a", "titulo": "Oração do Incenso", "subtitulo": "Acompanha a queima de incenso nas celebrações", "texto": "Que esta oração suba até Vós, Senhor,\ncomo a fumaça do incenso diante de Vós.\nQue o elevar de minhas mãos\nseja como o sacrifício da tarde.\n\nComo o perfume do incenso sobe aos céus,\nassim suba a minha oração\naté Vós, ó Deus.\n\nAmém.\n(cf. Salmo 141,2)"}, {"secao": "sacramentos", "secaoLabel": "Sacramentos e Vida Espiritual", "secaoIcon": "🕊️", "secaoCor": "#1a3d6b", "titulo": "Antes de Comungar", "subtitulo": "Preparação para a Sagrada Comunhão", "texto": "Senhor meu Jesus Cristo,\nSenhor e Salvador meu,\nque estais vivo e verdadeiro neste Sacramento,\nprostro-me diante de Vós.\n\nNão sou digno de que entreis em mim,\nmas uma só palavra vossa\nbastará para me curar.\n\nRecebei-me, Senhor, não pela minha dignidade,\nmas pela vossa misericórdia.\nSeja esta Comunhão\nremédio para as minhas faltas,\nfortificação para o meu espírito\ne penhor da vida eterna.\n\nAmém."}, {"secao": "sacramentos", "secaoLabel": "Sacramentos e Vida Espiritual", "secaoIcon": "🕊️", "secaoCor": "#1a3d6b", "titulo": "Pós-Comunhão", "subtitulo": "Ação de graças após receber a Eucaristia", "texto": "Senhor Jesus,\nvós que acabastes de entrar em mim\nneste augusto Sacramento,\ngradeço-vos por tão grande dom.\n\nQue esta Comunhão me transforme\nà vossa semelhança.\nQue o vosso Corpo e Sangue\nsejam força para minha jornada,\nluz para meu caminho\ne prenda de vida eterna.\n\nFicai em mim, Senhor,\ncomo eu quero ficar em Vós.\n\nAmém."}, {"secao": "sacramentos", "secaoLabel": "Sacramentos e Vida Espiritual", "secaoIcon": "🕊️", "secaoCor": "#1a3d6b", "titulo": "Comunhão Espiritual", "subtitulo": "Para quando não se pode receber a Comunhão sacramental", "texto": "Jesus meu,\neu creio que estais verdadeiramente presente\nno Santíssimo Sacramento do altar.\n\nAmo-vos sobre todas as coisas\ne desejo ardentemente receber-vos.\nComo não posso agora receber-vos sacramentalmente,\nvinde ao menos espiritualmente ao meu coração.\n\nAbraço-vos como se já estivésseis dentro de mim\ne uno-me completamente a Vós.\nNão permitais que me separe de Vós.\n\nAmém."}, {"secao": "sacramentos", "secaoLabel": "Sacramentos e Vida Espiritual", "secaoIcon": "🕊️", "secaoCor": "#1a3d6b", "titulo": "Depois da Confissão", "subtitulo": "Ação de graças pelo sacramento do Perdão", "texto": "Senhor Jesus,\ngradeço-vos pela misericórdia\nque acabei de receber no sacramento da Confissão.\n\nVosso sangue me purificou.\nVosso amor me acolheu.\nVossa graça me renovou.\n\nQue eu não volte aos mesmos pecados.\nDai-me a força da perseverança.\n\nMaria, Mãe de Misericórdia,\nacompanhai-me neste novo começo.\n\nAmém."}, {"secao": "sacramentos", "secaoLabel": "Sacramentos e Vida Espiritual", "secaoIcon": "🕊️", "secaoCor": "#1a3d6b", "titulo": "Antes e Depois do Ofício Divino", "subtitulo": "Para a Liturgia das Horas", "texto": "ANTES:\nAbre, Senhor, a minha boca\npara que eu louve o vosso nome santo.\nPurifica meu coração de todos os pensamentos vãos,\npara que eu possa dignamente louvar-vos.\n\nAMÉM.\n\nDEPOIS:\nQue a oração que fiz ao vosso louvor\nvos seja agradável, Senhor.\nE a mim, que sou indigno,\nconcedei a vossa graça e misericórdia.\n\nAmém."}, {"secao": "sacramentos", "secaoLabel": "Sacramentos e Vida Espiritual", "secaoIcon": "🕊️", "secaoCor": "#1a3d6b", "titulo": "Invocação do Espírito Santo", "subtitulo": "Para invocar os dons do Espírito Santo", "texto": "Vinde, Espírito Santo,\nenchei os corações dos vossos fiéis\ne acendei neles o fogo do vosso amor.\n\nEnviai o vosso Espírito\ne tudo será criado.\nE renovareis a face da terra.\n\nOremos:\nÓ Deus, que instruístes os corações dos vossos fiéis\ncom a luz do Espírito Santo,\nconcedei-nos que, pelo mesmo Espírito,\ntenhamos sempre o gosto das coisas retas\ne gozemos sempre da sua consolação.\n\nPor Cristo, Nosso Senhor.\n\nAmém."}, {"secao": "sacramentos", "secaoLabel": "Sacramentos e Vida Espiritual", "secaoIcon": "🕊️", "secaoCor": "#1a3d6b", "titulo": "Vinde, Espírito Criador — Veni Creator (Pentecostes)", "subtitulo": "Hino ao Espírito Santo — rezado em Pentecostes", "texto": "Vinde, Espírito Criador,\nvisitai as almas dos vossos fiéis,\nenchai de divina graça\nos corações que criastes.\n\nVós, a quem chamam Paráclito,\ndon de Deus Altíssimo,\nfonte viva, fogo, amor\ne unção espiritual.\n\nVós, que sois o dom setiforme,\ndedo da mão de Deus à direita,\nvós, a quem o Pai prometeu,\nenriquecei a linguagem.\n\nIluminai os nossos sentidos,\nderramai amor em nossos corações;\ncomo somos corpos fracos,\nfortalecei-nos com o vosso poder.\n\nAmém."}, {"secao": "sacramentos", "secaoLabel": "Sacramentos e Vida Espiritual", "secaoIcon": "🕊️", "secaoCor": "#1a3d6b", "titulo": "Vinde, Santo Espírito", "subtitulo": "Sequência de Pentecostes — Veni Sancte Spiritus", "texto": "Vinde, Espírito Santo,\nmandai do céu um raio de luz.\n\nVinde, pai dos pobres,\nvinde, doador de dons,\nvinde, luz dos corações.\n\nConsolador perfeito,\nhóspede doce da alma,\nrefrigerio suave.\n\nNa fadiga, descanso,\nno ardor, frescura,\nno pranto, conforto.\n\nÓ luz beatíssima,\nbrilhai na intimidade\ndo coração dos vossos fiéis.\n\nSem o vosso divino poder,\nnada há no homem,\nnada que seja puro.\n\nLavai o que está manchado,\nregai o que está árido,\ncurai o que está ferido.\n\nDobrai o que é rígido,\naquecei o que é frio,\ncorrigis o que está extraviado.\n\nDai a vossos fiéis\nque em Vós confiam\nvossas sagradas virtudes.\n\nDai a virtude e o prêmio,\ndai a salvação no fim,\ndai a alegria eterna.\n\nAmém."}, {"secao": "santos", "secaoLabel": "Aos Santos e Santas", "secaoIcon": "✨", "secaoCor": "#8a1a5c", "titulo": "A Todos os Santos", "subtitulo": "Invocação da comunhão dos santos", "texto": "Santos e Santas de Deus,\nvós que contemplais o rosto de Deus\ne intercedeis por nós,\norai por nós!\n\nVós que percorrestes o caminho difícil da fé\ne chegastes ao fim com vitória,\ntornai-vos nossos intercessores.\n\nQue a vossa comunhão com Deus\nnos alcance a graça\nde seguir os vossos passos\naté à glória eterna.\n\nAmém."}, {"secao": "santos", "secaoLabel": "Aos Santos e Santas", "secaoIcon": "✨", "secaoCor": "#8a1a5c", "titulo": "A Santa Teresinha do Menino Jesus", "subtitulo": "Padroeira das missões — o pequeno caminho", "texto": "Santa Teresinha,\nque encontrastes a santidade\nnão em grandes obras\nmas nos pequenos atos de amor,\n\nensinai-nos o vosso pequeno caminho.\nQue eu não despreze as pequenas coisas.\nQue eu ame com fidelidade no cotidiano.\n\nVosso prometestes\npassar o vosso céu fazendo bem na terra.\nLembrai-vos de mim.\n\nAmém."}, {"secao": "santos", "secaoLabel": "Aos Santos e Santas", "secaoIcon": "✨", "secaoCor": "#8a1a5c", "titulo": "À Sagrada Família", "subtitulo": "Para famílias e pelo lar cristão", "texto": "Jesus, Maria e José,\nSagrada Família de Nazaré,\nolhai para a nossa família.\n\nJesus, ensinai-nos a obediência.\nMaria, ensinai-nos a fé e o amor.\nJosé, ensinai-nos o trabalho e a proteção.\n\nQue o nosso lar seja um reflexo\ndo vosso lar de Nazaré:\ncheio de oração, de trabalho\ne de amor mútuo.\n\nAmém."}, {"secao": "santos", "secaoLabel": "Aos Santos e Santas", "secaoIcon": "✨", "secaoCor": "#8a1a5c", "titulo": "À Santa Cruz", "subtitulo": "Veneração ao instrumento da nossa salvação", "texto": "Santa Cruz,\nmadeiro glorioso\nem que foi pregado o Senhor do universo,\n\nnós vos adoramos\nnão pelo madeiro,\nmas por Aquele que nele morreu.\n\nSeja a Cruz nossa proteção.\nSeja a Cruz nossa vitória.\nSeja a Cruz nossa salvação.\n\nPela Cruz se salvou o mundo.\n\nAmém."}, {"secao": "santos", "secaoLabel": "Aos Santos e Santas", "secaoIcon": "✨", "secaoCor": "#8a1a5c", "titulo": "São José, Pai e Protetor", "subtitulo": "Oração ao esposo de Maria e guardião de Jesus", "texto": "São José, pai terno e vigilante,\nque guardaste Jesus e Maria\ncom todo o cuidado e amor,\n\nprotegei nossas famílias.\nSede o guardião de nossos lares.\nInspirainos a trabalhar com honestidade,\na cuidar dos que nos foram confiados\ne a confiar sempre na Providência divina.\n\nSão José, rogai por nós.\n\nAmém."}, {"secao": "santos", "secaoLabel": "Aos Santos e Santas", "secaoIcon": "✨", "secaoCor": "#8a1a5c", "titulo": "A Vós, São José, Recorremos", "subtitulo": "Invocação tradicional a São José", "texto": "A vós, São José, recorremos na nossa angústia,\ne depois de implorar o auxílio\nde vossa santíssima esposa,\nsolicitamos também com confiança\no vosso patrocínio.\n\nPor aquele sagrado vínculo de caridade\nque vos uniu à Imaculada Virgem Maria,\nMãe de Deus,\ne pela afeição paternal\ncom que acolhestes o Menino Jesus,\nolhai com benevolência para a herança\nque Jesus Cristo adquiriu com o seu sangue\ne interpondei o vosso poder\nem nosso favor.\n\nAmém."}, {"secao": "santos", "secaoLabel": "Aos Santos e Santas", "secaoIcon": "✨", "secaoCor": "#8a1a5c", "titulo": "Ave José", "subtitulo": "Saudação a São José à imagem do Ave Maria", "texto": "Ave José, cheio de graça,\no Senhor é convosco.\nBendito sois entre os homens\ne bendito é o fruto da vossa casa, Jesus.\n\nSanto José, esposo de Maria,\nrogai por nós pecadores,\nagora e na hora da nossa morte.\n\nAmém."}, {"secao": "santos", "secaoLabel": "Aos Santos e Santas", "secaoIcon": "✨", "secaoCor": "#8a1a5c", "titulo": "Por Intercessão de São José", "subtitulo": "Para pedir graças pela intercessão de José", "texto": "Ó glorioso São José,\nesposo da Virgem Maria\ne pai adotivo de Jesus,\n\nvós que conhecestes as preocupações\ne as angústias da vida humana,\nolhai para nós com compaixão.\n\nIntercedei por nós diante de Jesus\ne alcançai-nos as graças de que necessitamos.\n\nSão José, rogai por nós!\n\nAmém."}, {"secao": "santos", "secaoLabel": "Aos Santos e Santas", "secaoIcon": "✨", "secaoCor": "#8a1a5c", "titulo": "Responsório de Santo Antônio", "subtitulo": "Antífona medieval cantada em sua honra — Si quaeris miracula", "texto": "Se buscas milagres,\nvai a Santo Antônio:\nmorte, erro, calamidade,\ndemônio, lepra e cegueira\nse afastam; enfermos e possessos\nsão curados, jovens e velhos.\n\nO mar acalma a tempestade,\nos grilhões se despedaçam,\nos membros perdidos se recuperam,\nos bens perdidos são encontrados.\n\nO perigo desaparece,\na necessidade se afasta:\ncontem-nos esses prodígios\nos que os experimentaram.\n\nO mar recua, os grilhões se rompem,\nos membros mutilados saem sãos,\nos perdidos são encontrados.\n\nGlória ao Pai e ao Filho\ne ao Espírito Santo.\n\nRogai por nós, Santo Antônio,\npara que sejamos dignos das promessas de Cristo.\n\nOremos:\nDeus, que glorificastes o vosso fiel confessor Antônio\ncom o singular privilégio de fazer milagres,\nconcedei, por seus méritos e intercessão,\nque o que pedimos com confiança,\npossamos felizmente alcançar.\nPor Cristo, Nosso Senhor.\nAmém."}, {"secao": "santos", "secaoLabel": "Aos Santos e Santas", "secaoIcon": "✨", "secaoCor": "#8a1a5c", "titulo": "Trezena de Santo Antônio", "subtitulo": "13 dias de oração ao Santo dos Milagres — começa em 31 de maio", "texto": "ORAÇÃO PARA TODOS OS 13 DIAS:\n\nGlorioso Santo Antônio,\nDoutor da Igreja e Trabalhador de Milagres,\nvós que sois chamado de martelo dos hereges\ne arca do Testamento,\nolhai para mim com compaixão.\n\nVós que encontrais o que está perdido,\ncurais o que está enfermo,\nconsolais o que está angustiado,\nsocorreis o que está em necessidade,\nvinde em meu auxílio.\n\nCom confiança de filho,\napresento a vós minha intenção\nneste dia da Trezena:\n[apresente sua petição]\n\nSanto Antônio, que fostes tão poderoso\nem vida e o sois ainda mais na glória,\nintercedei por mim junto a Jesus\ne junto a Nossa Senhora.\n\nAmém.\n\n— Reze 1 Pai Nosso, 1 Ave Maria, 1 Glória —\n— Responsório de Santo Antônio —\n\nOS 13 DIAS E SEUS TEMAS:\nDia 1 (31/mai) — Infância e vocação de Santo Antônio\nDia 2 (01/jun) — Santo Antônio, pregador do Evangelho\nDia 3 (02/jun) — Santo Antônio e os pecadores\nDia 4 (03/jun) — Santo Antônio e os pobres\nDia 5 (04/jun) — Santo Antônio e os enfermos\nDia 6 (05/jun) — Santo Antônio e as causas perdidas\nDia 7 (06/jun) — Santo Antônio e os objetos perdidos\nDia 8 (07/jun) — Santo Antônio e as crianças\nDia 9 (08/jun) — Santo Antônio e as famílias\nDia 10 (09/jun) — Santo Antônio e os que sofrem\nDia 11 (10/jun) — Santo Antônio e a conversão\nDia 12 (11/jun) — Santo Antônio e a morte santa\nDia 13 (12/jun) — Festa de Santo Antônio (13 de junho)\n\nINVOCAÇÃO FINAL:\nSanto Antônio, pão dos pobres,\nrogai por nós!\nSanto Antônio, Trabalhador de Milagres,\nrogai por nós!\nSanto Antônio, padroeiro dos objetos perdidos,\nrogai por nós!"}, {"secao": "atos_virtudes", "secaoLabel": "Atos de Virtude e Fé", "secaoIcon": "💛", "secaoCor": "#7a5a00", "titulo": "Ato de Fé", "subtitulo": "Profissão explícita de fé em Deus", "texto": "Meu Deus,\ncreio firmemente em tudo o que vós revelasteís\ne a santa Igreja nos propõe para crermos,\nporque vós sois a verdade infinita\nque não pode enganar-se nem nos enganar.\n\nAmém."}, {"secao": "atos_virtudes", "secaoLabel": "Atos de Virtude e Fé", "secaoIcon": "💛", "secaoCor": "#7a5a00", "titulo": "Ato de Esperança", "subtitulo": "Confiança na misericórdia e nas promessas de Deus", "texto": "Meu Deus,\nespero confiante em vós\nque me dareis, por vossa misericórdia\ne pelos méritos de Jesus Cristo,\na graça de viver bem\ne a glória do céu,\nporque vós o prometestes.\n\nAmém."}, {"secao": "atos_virtudes", "secaoLabel": "Atos de Virtude e Fé", "secaoIcon": "💛", "secaoCor": "#7a5a00", "titulo": "Ato de Caridade", "subtitulo": "Declaração explícita de amor a Deus e ao próximo", "texto": "Meu Deus,\namo-vos sobre todas as coisas\ncom todo o meu coração e minha alma,\nporque vós sois sumamente bom e digno de todo o amor.\n\nE por amor de vós\namo o meu próximo como a mim mesmo.\n\nAmém."}, {"secao": "atos_virtudes", "secaoLabel": "Atos de Virtude e Fé", "secaoIcon": "💛", "secaoCor": "#7a5a00", "titulo": "Atos de Fé, Esperança e Caridade", "subtitulo": "Os três atos teologais juntos", "texto": "ATO DE FÉ:\nMeu Deus, creio em Vós\nporque sois a verdade que não falha.\n\nATO DE ESPERANÇA:\nMeu Deus, espero em Vós\nporque sois a misericórdia que não abandona.\n\nATO DE CARIDADE:\nMeu Deus, amo-vos\nporque sois o bem que não desaponta.\n\nE amo o meu próximo\ncomo a mim mesmo por amor de Vós.\n\nAmém."}, {"secao": "atos_virtudes", "secaoLabel": "Atos de Virtude e Fé", "secaoIcon": "💛", "secaoCor": "#7a5a00", "titulo": "Adoro Te Devote", "subtitulo": "Hino de adoração eucarística de São Tomás de Aquino", "texto": "Adoro-te devoto, Deus escondido,\nque sob estas formas te ocultas a mim;\na ti se submete todo o meu ser,\npois contemplando-te, tudo vem a falhar.\n\nA vista, o gosto, o tacto, em ti encontram falha;\nmas somente o ouvido crê seguramente.\nCreio tudo o que disse o Filho de Deus;\nnada é mais verdadeiro que a palavra da Verdade.\n\nNa Cruz ocultava-se somente a divindade,\naqui ocultam-se também a humanidade;\nas duas, porém, confessando, creio\ne peço o que o ladrão penitente pediu.\n\nNão vejo as chagas como Tomé viu,\nmas confesso que és meu Deus;\nfaze-me crer cada vez mais em ti,\nesperares e amares.\n\nAmém."}, {"secao": "atos_virtudes", "secaoLabel": "Atos de Virtude e Fé", "secaoIcon": "💛", "secaoCor": "#7a5a00", "titulo": "Alma de Cristo", "subtitulo": "Oração mística atribuída a Santo Inácio de Loyola", "texto": "Alma de Cristo, santificai-me.\nCorpo de Cristo, salvai-me.\nSangue de Cristo, embebedai-me.\nÁgua do lado de Cristo, lavai-me.\nPaixão de Cristo, confortai-me.\n\nÓ bom Jesus, ouvi-me.\nNas vossas chagas, escondei-me.\nNão me deixeis separar-me de Vós.\nDo maligno inimigo, defendei-me.\nNa hora da morte, chamai-me.\nE mandai-me vir para junto de Vós,\npara que com os vossos Santos vos louve,\npelos séculos dos séculos.\n\nAmém."}, {"secao": "atos_virtudes", "secaoLabel": "Atos de Virtude e Fé", "secaoIcon": "💛", "secaoCor": "#7a5a00", "titulo": "Oração de Jesus", "subtitulo": "Jaculatória mística da espiritualidade oriental", "texto": "Senhor Jesus Cristo,\nFilho de Deus,\ntende piedade de mim, pecador.\n\n— Repita devagar, com a respiração —\n\nSenhor Jesus Cristo,\nFilho de Deus,\ntende piedade de mim.\n\nSenhor Jesus Cristo,\ntende piedade de mim.\n\nJesus, misericórdia.\n\nAmém."}, {"secao": "atos_virtudes", "secaoLabel": "Atos de Virtude e Fé", "secaoIcon": "💛", "secaoCor": "#7a5a00", "titulo": "A Deus Uno e Trino", "subtitulo": "Adoração à Santíssima Trindade", "texto": "Glória ao Pai que nos criou.\nGlória ao Filho que nos redimiu.\nGlória ao Espírito Santo que nos santifica.\n\nSantíssima Trindade,\num só Deus em três Pessoas,\nadoramos, bendizemos e glorificamos\nvossa infinita majestade.\n\nDai-nos conhecer-vos melhor,\namar-vos mais\ne servir-vos fielmente.\n\nGlória à Trindade Santa\nagora e para sempre.\n\nAmém."}, {"secao": "atos_virtudes", "secaoLabel": "Atos de Virtude e Fé", "secaoIcon": "💛", "secaoCor": "#7a5a00", "titulo": "À Imaculada Conceição", "subtitulo": "Para honrar o privilégio de Maria", "texto": "Ó Maria concebida sem pecado original,\nnós vos saudamos com alegria.\n\nVós que fostes preservada de toda mácula\npelo privilégio singular de Deus,\nrepresentais a humanidade renovada,\no novo começo que Deus quis para nós.\n\nIntercedei por nós perante vosso Filho.\nObtende-nos a graça de evitar o pecado\ne crescer em santidade.\n\nAmém."}, {"secao": "atos_virtudes", "secaoLabel": "Atos de Virtude e Fé", "secaoIcon": "💛", "secaoCor": "#7a5a00", "titulo": "A Jesus Crucificado", "subtitulo": "Contemplação do amor de Cristo na Cruz", "texto": "Ó Jesus crucificado,\neu vos contemplo nesta Cruz\ne vejo todo o vosso amor por mim.\n\nPor estas chagas nas mãos,\nperdoai as obras que ofendem a Deus.\nPor esta chaga no lado,\namai-me com o vosso Coração aberto.\nPor estas chagas nos pés,\nguiai meus passos no caminho da santidade.\n\nObrigado, Jesus, por tudo.\nNão vos deixarei só.\n\nAmém."}, {"secao": "atos_virtudes", "secaoLabel": "Atos de Virtude e Fé", "secaoIcon": "💛", "secaoCor": "#7a5a00", "titulo": "Ao Sagrado Coração", "subtitulo": "Oração de consagração e reparação ao Coração de Jesus", "texto": "Ó docíssimo Jesus,\ncujo ardente amor pelos homens\nvos colocou na Cruz,\nolhai para este coração que se prostra ante Vós.\n\nVos oferecemos nossos corações\nem reparação por tantas ingratidões.\nVos consagramos nossas vidas,\nnossas famílias, nossa pátria.\n\nSagrado Coração de Jesus,\nnele confio.\nSagrado Coração de Jesus,\ntende misericórdia de nós.\n\nAmém."}, {"secao": "atos_virtudes", "secaoLabel": "Atos de Virtude e Fé", "secaoIcon": "💛", "secaoCor": "#7a5a00", "titulo": "Livrai-me, Senhor Jesus", "subtitulo": "Súplica de proteção e libertação", "texto": "Livrai-me, Senhor Jesus,\ndo mal passado, presente e futuro,\nde todo o poder do demônio,\nde todo o pecado\ne de toda a perturbação da alma.\n\nPela vossa morte e ressurreição,\npelo vosso Precioso Sangue,\npela intercessão de Maria,\nde todos os anjos e santos,\nsalvai-me e protegei-me.\n\nAmém."}, {"secao": "atos_virtudes", "secaoLabel": "Atos de Virtude e Fé", "secaoIcon": "💛", "secaoCor": "#7a5a00", "titulo": "Eu Vos Imploro, Dulcíssimo Jesus", "subtitulo": "Súplica de amor e contrição", "texto": "Eu vos imploro, dulcíssimo Jesus,\nnão me abandoneis na hora da tentação.\nSede minha força,\nsede meu escudo,\nsede minha luz.\n\nVós que me amais com amor infinito,\nnão permitais que eu me afaste de Vós.\nNão permitais que me perca.\n\nDulcíssimo Jesus,\ntenho confiança em Vós.\n\nAmém."}];
+const starsEl=document.getElementById('stars');
+for(let i=0;i<70;i++){const s=document.createElement('div');s.className='star';const sz=Math.random()*2.5+0.5;s.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--dur:${Math.random()*3+2}s;--delay:${Math.random()*4}s;--base-op:${Math.random()*0.5+0.15};`;starsEl.appendChild(s);}
+let currentSec='all',currentSearch='';
+function filterSec(sec){currentSec=sec;document.querySelectorAll('.nav-pill').forEach(p=>p.classList.toggle('active',p.dataset.sec===sec));applyFilters();if(sec!=='all'){const el=document.getElementById('sec-'+sec);if(el)setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),80);}}
+function doSearch(){currentSearch=document.getElementById('search-input').value.toLowerCase().trim();document.getElementById('search-clear').style.display=currentSearch?'block':'none';applyFilters();}
+function clearSearch(){document.getElementById('search-input').value='';currentSearch='';document.getElementById('search-clear').style.display='none';applyFilters();}
+function applyFilters(){let visible=0;document.querySelectorAll('.oracao-section').forEach(sec=>{const sk=sec.dataset.sec;const showSec=currentSec==='all'||currentSec===sk;let sv=0;sec.querySelectorAll('.oracao-card').forEach((card,i)=>{const item=ORACOES.filter(o=>o.secao===sk)[i];if(!item)return;const m=!currentSearch||item.titulo.toLowerCase().includes(currentSearch)||item.subtitulo.toLowerCase().includes(currentSearch)||item.texto.toLowerCase().includes(currentSearch)||item.secaoLabel.toLowerCase().includes(currentSearch);const show=showSec&&m;card.classList.toggle('card-hidden',!show);if(show){sv++;visible++;}});sec.classList.toggle('hidden',sv===0);});document.getElementById('no-results').classList.toggle('show',visible===0);const sc=document.getElementById('search-count');if(currentSearch){sc.textContent=visible===0?'Nenhuma oração encontrada':visible===1?'1 oração encontrada':`${visible} orações encontradas`;}else{sc.textContent='';}}
+let currentIdx=0;
+function openModal(idx){currentIdx=idx;const o=ORACOES[idx];const b=document.getElementById('modal-badge');b.textContent=o.secaoIcon+' '+o.secaoLabel;b.style.cssText=`background:${o.secaoCor}18;color:${o.secaoCor}`;document.getElementById('modal-titulo').textContent=o.titulo;document.getElementById('modal-subtitulo').textContent=o.subtitulo;document.getElementById('modal-texto').textContent=o.texto;document.getElementById('modal-overlay').classList.add('active');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('modal-overlay').classList.remove('active');document.body.style.overflow='';}
+document.getElementById('modal-close').addEventListener('click',closeModal);
+document.getElementById('modal-overlay').addEventListener('click',e=>{if(e.target===document.getElementById('modal-overlay'))closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400);}
+function copyText(){const o=ORACOES[currentIdx];const txt=o.titulo+'\n\n'+o.texto+'\n\n✦ Maria de Nazaré 2026 🌹';navigator.clipboard.writeText(txt).then(()=>showToast('✓ Oração copiada!')).catch(()=>{const ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast('✓ Oração copiada!');});}
+function shareWpp(){const o=ORACOES[currentIdx];window.open('https://wa.me/?text='+encodeURIComponent('🌹 *'+o.titulo+'*\n\n'+o.texto+'\n\n_Maria de Nazaré 2026_ ✦'),'_blank');}
+function shareNative(){const o=ORACOES[currentIdx];if(navigator.share){navigator.share({title:o.titulo,text:o.titulo+'\n\n'+o.texto,url:window.location.href}).catch(()=>{});}else{copyText();}}
+function downloadPDF(){const o=ORACOES[currentIdx];const w=window.open('','_blank');w.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${o.titulo}</title><style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Lato:wght@400;700&display=swap');body{font-family:'Lato',serif;max-width:580px;margin:60px auto;color:#2a2218;padding:0 40px}.badge{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:${o.secaoCor};margin-bottom:10px}h1{font-family:'Cormorant Garamond',serif;font-size:28px;color:#1a3d5c;margin-bottom:5px}.sub{font-size:12px;color:#6b5e50;margin-bottom:28px;font-style:italic}.oracao{font-family:'Cormorant Garamond',serif;font-size:15px;line-height:2.1;white-space:pre-line}.footer{margin-top:40px;padding-top:16px;border-top:1px solid #e8d8c4;font-size:11px;color:#c9a84c;text-align:center;letter-spacing:1.5px}.ornament{text-align:center;color:#c9a84c;font-size:16px;margin-bottom:20px}</style></head><body><div class="ornament">✦ ✦ ✦</div><div class="badge">${o.secaoIcon} ${o.secaoLabel}</div><h1>${o.titulo}</h1><div class="sub">${o.subtitulo}</div><div class="oracao">${o.texto}</div><div class="footer">✦ MARIA DE NAZARÉ 2026 · EVANGELIZAÇÃO DIGITAL ✦</div><script>window.onload=()=>window.print()<\/script></body></html>`);w.document.close();}
+</script>
+</body>
+</html>
